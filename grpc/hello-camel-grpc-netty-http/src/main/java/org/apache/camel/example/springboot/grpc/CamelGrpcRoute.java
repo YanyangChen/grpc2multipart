@@ -30,26 +30,16 @@ public class CamelGrpcRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-	//setup the proto generated object
-        CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("HongKong").build();
-	
-	//setup endpoint and its behavior
-        from("timer://foo?period=10000&repeatCount=5").process(new Processor() {
 
+        CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("HongKong IRD").build();
+        from("netty-http:https://0.0.0.0:8080/foo").process(new Processor() {
+        // from("netty-http:http://0.0.0.0:8080/foo")
             @Override
-	    //set the body with the object, using the interface with thr object and its type name
             public void process(Exchange exchange) throws Exception {
                 exchange.getIn().setBody(request, CamelHelloRequest.class);
 
             }
-            //need to do convert: https://cloud.google.com/endpoints/docs/grpc/transcoding
-       // }).to("netty-http:https://0.0.0.0:8080/foo").log("Received ${body}");
-         
-        })
-    .marshal().mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-    .log("Message body : ${body}")
-    .to("log:org.apache.camel.example?level=INFO");
-    //.to("grpc://localhost:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
+        }).to("grpc://localhost:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
     }
 
 }

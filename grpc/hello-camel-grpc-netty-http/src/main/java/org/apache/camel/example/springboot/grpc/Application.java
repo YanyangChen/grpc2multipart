@@ -1,4 +1,4 @@
-/**
+/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -14,27 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-syntax = "proto3";
+package org.apache.camel.example.springboot.grpc;
 
-option java_multiple_files = true;
-option java_package = "org.apache.camel.examples";
-option java_outer_classname = "HelloCamelProto";
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-package org.apache.camel.examples;
+// CHECKSTYLE:OFF
+@SpringBootApplication
+public class Application {
 
-// The camel hello service definition.
-service CamelHello {
-  // Sends a greeting
-  rpc SayHelloToCamel (CamelHelloRequest) returns (CamelHelloReply) {}
+    /**
+     * Main method to start the application.
+     */
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
 }
-
-// The request message containing the user's name.
-message CamelHelloRequest {
-  string name = 1;
-  string city = 2;
-}
-
-// The response message containing the greetings
-message CamelHelloReply {
-  string message = 1;
-}
+// CHECKSTYLE:ON

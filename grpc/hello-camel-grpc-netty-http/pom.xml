@@ -26,9 +26,9 @@
         <version>3.16.0</version>
     </parent>
 
-    <artifactId>camel-example-hello-grpc-client</artifactId>
-    <name>Camel SB Examples :: gRPC :: Hello Camel Client</name>
-    <description>An example showing the Camel gRPC component with Spring Boot</description>
+    <artifactId>camel-example-hello-grpc-netty-http</artifactId>
+    <name>Camel SB Examples :: gRPC :: Hello Camel netty http</name>
+    <description>An example showing the Camel netty http component with Spring Boot</description>
 
     <properties>
         <category>Cloud</category>
@@ -68,10 +68,6 @@
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-grpc-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.camel.springboot</groupId>
-            <artifactId>camel-mail-starter</artifactId>
-        </dependency>
 
         <!-- Test -->
         <dependency>
@@ -88,12 +84,6 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-netty-http</artifactId>
-            <version>${camel-version}</version>
-            <!-- use the same version as your Camel core version -->
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-mail</artifactId>
             <version>${camel-version}</version>
             <!-- use the same version as your Camel core version -->
         </dependency>

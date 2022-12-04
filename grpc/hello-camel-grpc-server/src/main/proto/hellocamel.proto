@@ -31,6 +31,7 @@ service CamelHello {
 // The request message containing the user's name.
 message CamelHelloRequest {
   string name = 1;
+  string city = 2;
 }
 
 // The response message containing the greetings

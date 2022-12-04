@@ -72,7 +72,7 @@ public class HelloCamelServer {
 
         @Override
         public void sayHelloToCamel(CamelHelloRequest req, StreamObserver<CamelHelloReply> responseObserver) {
-            CamelHelloReply reply = CamelHelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
+            CamelHelloReply reply = CamelHelloReply.newBuilder().setMessage("Hello " + req.getName() + " how is everything in " + req.getCity() + "?").build();
             responseObserver.onNext(reply);
             responseObserver.onCompleted();
         }
