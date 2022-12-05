@@ -46,8 +46,26 @@ public class CamelGrpcRoute extends RouteBuilder {
        // }).to("netty-http:https://0.0.0.0:8080/foo").log("Received ${body}");
          
         })
-    .marshal().mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-    .log("Message body : ${body}")
+
+                .log("Message body in grpc: ${body}")
+        .process(new Processor() {
+
+            @Override
+            //set the body with the object, using the interface with thr object and its type name
+            public void process(Exchange exchange) throws Exception {
+                exchange.getIn().setBody(request, String.class);
+
+            }
+            //need to do convert: https://cloud.google.com/endpoints/docs/grpc/transcoding
+            // }).to("netty-http:https://0.0.0.0:8080/foo").log("Received ${body}");
+
+        })
+
+    .marshal()
+                .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
+
+
+    .log("Message body in multipart : ${body}")
     .to("log:org.apache.camel.example?level=INFO");
     //.to("grpc://localhost:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
     }
