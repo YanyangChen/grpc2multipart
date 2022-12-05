@@ -31,12 +31,23 @@ public class Multipart2gRPCRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("HongKong IRD").build();
+       // CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("HongKong IRD").build();
         from("activemq:my-activemq-queue")
+                //.convertBodyTo(CamelHelloRequest.class)
+
                 .process(new Processor() {
 
                     @Override
                     public void process(Exchange exchange) throws Exception {
+                        String receivedBody = exchange.getIn().getBody(String.class);
+                        log.info("receivedBody is " + receivedBody);
+
+                        //String name = receivedBody.substring(nameIndex,cityIndex-receivedBody.substring(cityIndex).length());
+                        String name = receivedBody.substring(nthOccurrence(receivedBody,"\"",3 )+1,nthOccurrence(receivedBody,"\"",4));
+                        String city = receivedBody.substring(nthOccurrence(receivedBody,"\"",5 )+1,nthOccurrence(receivedBody,"\"",6));
+                        log.info("received Name is " + name);
+                        log.info("received City is " + city);
+                        CamelHelloRequest request = CamelHelloRequest.newBuilder().setName(name).setCity(city).build();
                         exchange.getIn().setBody(request, CamelHelloRequest.class);
                     }
                 })
@@ -45,4 +56,21 @@ public class Multipart2gRPCRoute extends RouteBuilder {
     .to("log:org.apache.camel.example?level=INFO");
     }
 
+
+    public int nthOccurrence(String str1, String str2, int n) {
+
+        String tempStr = str1;
+        int tempIndex = -1;
+        int finalIndex = 0;
+        for(int occurrence = 0; occurrence < n ; ++occurrence){
+            tempIndex = tempStr.indexOf(str2);
+            if(tempIndex==-1){
+                finalIndex = 0;
+                break;
+            }
+            tempStr = tempStr.substring(++tempIndex);
+            finalIndex+=tempIndex;
+        }
+        return --finalIndex;
+    }
 }
