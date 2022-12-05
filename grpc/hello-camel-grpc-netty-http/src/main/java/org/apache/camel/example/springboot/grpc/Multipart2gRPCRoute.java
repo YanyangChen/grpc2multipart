@@ -25,21 +25,24 @@ import org.springframework.stereotype.Component;
 /**
  * A simple Camel gRPC route example using Spring-boot
  */
-//@Component
-public class CamelGrpcRoute extends RouteBuilder {
+@Component
+public class Multipart2gRPCRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
 
         CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("HongKong IRD").build();
-        from("netty:tcp://0.0.0.0:9000/foo").process(new Processor() {
-        // from("netty-http:http://0.0.0.0:8080/foo")
-            @Override
-            public void process(Exchange exchange) throws Exception {
-                exchange.getIn().setBody(request, CamelHelloRequest.class);
+        from("activemq:my-activemq-queue")
+                .process(new Processor() {
 
-            }
-        }).to("grpc://localhost:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
+                    @Override
+                    public void process(Exchange exchange) throws Exception {
+                        exchange.getIn().setBody(request, CamelHelloRequest.class);
+                    }
+                })
+
+                .log("Message body back in grpc: ${body}")
+    .to("log:org.apache.camel.example?level=INFO");
     }
 
 }

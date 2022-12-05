@@ -34,39 +34,37 @@ public class CamelGrpcRoute extends RouteBuilder {
         CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("HongKong").build();
 	
 	//setup endpoint and its behavior
-        from("timer://foo?period=10000&repeatCount=5").process(new Processor() {
-
+        from("timer://foo?period=10000&repeatCount=1").process(new Processor() {
             @Override
 	    //set the body with the object, using the interface with thr object and its type name
             public void process(Exchange exchange) throws Exception {
                 exchange.getIn().setBody(request, CamelHelloRequest.class);
-
             }
             //need to do convert: https://cloud.google.com/endpoints/docs/grpc/transcoding
        // }).to("netty-http:https://0.0.0.0:8080/foo").log("Received ${body}");
          
         })
-
                 .log("Message body in grpc: ${body}")
-        .process(new Processor() {
-
-            @Override
-            //set the body with the object, using the interface with thr object and its type name
-            public void process(Exchange exchange) throws Exception {
-                exchange.getIn().setBody(request, String.class);
-
-            }
-            //need to do convert: https://cloud.google.com/endpoints/docs/grpc/transcoding
-            // }).to("netty-http:https://0.0.0.0:8080/foo").log("Received ${body}");
-
-        })
+                .convertBodyTo(String.class)
 
     .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
 
 
     .log("Message body in multipart : ${body}")
-    .to("log:org.apache.camel.example?level=INFO");
+                .to("activemq:my-activemq-queue");
+//
+//
+//                .process(new Processor() {
+//
+//                    @Override
+//                    public void process(Exchange exchange) throws Exception {
+//                        exchange.getIn().setBody(request, CamelHelloRequest.class);
+//                    }
+//                })
+//
+//                .log("Message body back in grpc: ${body}")
+//    .to("log:org.apache.camel.example?level=INFO");
     //.to("grpc://localhost:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
     }
 
