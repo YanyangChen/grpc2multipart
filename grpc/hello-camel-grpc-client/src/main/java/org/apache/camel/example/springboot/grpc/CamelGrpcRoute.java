@@ -56,9 +56,12 @@ public class CamelGrpcRoute extends RouteBuilder {
 
                 .convertBodyTo(String.class)
                 .to("seda:netty-http:http://0.0.0.0:9000/foo");
+               // .to("netty-http:http://0.0.0.0:8123/foo");
+        //assumed front platform gRPC data converted to bytes (in Java, Byte is transported in form of String type)
+
+
         //front plat netty start
                 //.to("netty-http:http://0.0.0.0:9000/foo");
-
         from("seda:netty-http:http://0.0.0.0:9000/foo")
                 //.transform().constant("Bye World");
                 .log("Message body back in grpc: ${body}")
@@ -69,9 +72,13 @@ public class CamelGrpcRoute extends RouteBuilder {
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
                 //.mimeMultipart()
        //front plat netty end
+
+       //send to another netty server
                 .to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
-                .log("Message body back in multipart: ${body}")
+                //.log("Message body back in multipart: ${body}")
                 .to("activemq:my-activemq-queue");
+
+
 //
 //
 //                .process(new Processor() {
