@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 /**
  * A simple Camel gRPC route example using Spring-boot
  */
-@Component
+//@Component
 public class Multipart2gRPCRoute extends RouteBuilder {
 
     @Override

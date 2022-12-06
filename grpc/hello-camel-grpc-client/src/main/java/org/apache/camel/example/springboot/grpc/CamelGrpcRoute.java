@@ -19,7 +19,9 @@ package org.apache.camel.example.springboot.grpc;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.netty.NettyServerBootstrapConfiguration;
 import org.apache.camel.examples.CamelHelloRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -28,11 +30,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class CamelGrpcRoute extends RouteBuilder {
 
+
     @Override
     public void configure() throws Exception {
 	//setup the proto generated object
-        CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("HongKong").build();
-	
+        CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("London").build();
+
+        NettyServerBootstrapConfiguration nettyHttpBootstrapOptions = new NettyServerBootstrapConfiguration();
+        //from uri="netty-http:http://0.0.0.0:{{port}}/foo?bootstrapConfiguration=#nettyHttpBootstrapOptions"
+
 	//setup endpoint and its behavior
         from("timer://foo?period=10000&repeatCount=1").process(new Processor() {
             @Override
@@ -45,13 +51,16 @@ public class CamelGrpcRoute extends RouteBuilder {
          
         })
                 .log("Message body in grpc: ${body}")
+                .to("activemq:my-activemq-grpc")
                 .convertBodyTo(String.class)
+                .to("activemq:my-activemq-grpc2Str")
 
     .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-
+                //.mimeMultipart()
 
     .log("Message body in multipart : ${body}")
+                .to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
                 .to("activemq:my-activemq-queue");
 //
 //
