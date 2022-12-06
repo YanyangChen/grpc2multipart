@@ -52,15 +52,25 @@ public class CamelGrpcRoute extends RouteBuilder {
         })
                 .log("Message body in grpc: ${body}")
                 .to("activemq:my-activemq-grpc")
+
+
                 .convertBodyTo(String.class)
+                .to("seda:netty-http:http://0.0.0.0:9000/foo");
+        //front plat netty start
+                //.to("netty-http:http://0.0.0.0:9000/foo");
+
+        from("seda:netty-http:http://0.0.0.0:9000/foo")
+                //.transform().constant("Bye World");
+                .log("Message body back in grpc: ${body}")
+
                 .to("activemq:my-activemq-grpc2Str")
 
-    .marshal()
+                .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
                 //.mimeMultipart()
-
-    .log("Message body in multipart : ${body}")
+       //front plat netty end
                 .to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
+                .log("Message body back in multipart: ${body}")
                 .to("activemq:my-activemq-queue");
 //
 //
