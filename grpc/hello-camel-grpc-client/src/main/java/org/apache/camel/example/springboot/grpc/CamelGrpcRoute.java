@@ -17,6 +17,7 @@
 package org.apache.camel.example.springboot.grpc;
 
 import org.apache.camel.Exchange;
+import org.apache.camel.ExchangePattern;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.netty.NettyServerBootstrapConfiguration;
@@ -40,7 +41,7 @@ public class CamelGrpcRoute extends RouteBuilder {
         //from uri="netty-http:http://0.0.0.0:{{port}}/foo?bootstrapConfiguration=#nettyHttpBootstrapOptions"
 
 	//setup endpoint and its behavior
-        from("timer://foo?period=10000&repeatCount=1").process(new Processor() {
+        from("timer://foo?period=5000&repeatCount=1").process(new Processor() {
             @Override
 	    //set the body with the object, using the interface with thr object and its type name
             public void process(Exchange exchange) throws Exception {
@@ -50,15 +51,18 @@ public class CamelGrpcRoute extends RouteBuilder {
         })
                 .log("Message body in grpc: ${body}")
                 .to("activemq:my-activemq-grpc")
+
                 .convertBodyTo(String.class)
-                .to("seda:netty-http:http://0.0.0.0:9000/foo");
+                //.setExchangePattern(ExchangePattern.InOptionalOut)
+                .to("netty-http:http://0.0.0.0:9000/foo");
+               // .to("seda:netty-http:http://0.0.0.0:9000/foo");
                // .to("netty-http:http://0.0.0.0:8123/foo");
         //assumed front platform gRPC data converted to bytes (in Java, Byte is transported in form of String type)
 
 
         //front plat netty start
                 //.to("netty-http:http://0.0.0.0:9000/foo");
-        from("seda:netty-http:http://0.0.0.0:9000/foo")
+/*        from("seda:netty-http:http://0.0.0.0:9000/foo")
                 //.transform().constant("Bye World");
                 .log("Message body back in grpc: ${body}")
 
@@ -72,7 +76,7 @@ public class CamelGrpcRoute extends RouteBuilder {
        //send to another netty server
                 .to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
                 //.log("Message body back in multipart: ${body}")
-                .to("activemq:my-activemq-queue");
+                .to("activemq:my-activemq-queue");*/
 
 
 //
