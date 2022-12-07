@@ -53,7 +53,7 @@ public class CamelGrpcRoute extends RouteBuilder {
                 .to("activemq:my-activemq-grpc")
 
                 .convertBodyTo(String.class)
-                //.setExchangePattern(ExchangePattern.InOptionalOut)
+                .setExchangePattern(ExchangePattern.InOut)
                 .to("netty-http:http://0.0.0.0:9000/foo");
                // .to("seda:netty-http:http://0.0.0.0:9000/foo");
                // .to("netty-http:http://0.0.0.0:8123/foo");

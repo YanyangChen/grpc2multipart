@@ -22,6 +22,7 @@ create table books (
         primary key (id)
     );
 
+
 INSERT INTO books (id, item, description)
   VALUES
       (1, 'Camel',    'Camel in Action'),
