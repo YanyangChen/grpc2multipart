@@ -46,14 +46,10 @@ public class CamelGrpcRoute extends RouteBuilder {
             public void process(Exchange exchange) throws Exception {
                 exchange.getIn().setBody(request, CamelHelloRequest.class);
             }
-            //need to do convert: https://cloud.google.com/endpoints/docs/grpc/transcoding
-       // }).to("netty-http:https://0.0.0.0:8080/foo").log("Received ${body}");
-         
+
         })
                 .log("Message body in grpc: ${body}")
                 .to("activemq:my-activemq-grpc")
-
-
                 .convertBodyTo(String.class)
                 .to("seda:netty-http:http://0.0.0.0:9000/foo");
                // .to("netty-http:http://0.0.0.0:8123/foo");
