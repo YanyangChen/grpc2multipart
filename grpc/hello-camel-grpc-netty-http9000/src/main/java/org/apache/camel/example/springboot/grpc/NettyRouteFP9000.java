@@ -22,7 +22,7 @@ public class NettyRouteFP9000  extends RouteBuilder {
                 //.to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
                 //.log("Message body back in multipart: ${body}")
                 .to("netty-http:http://0.0.0.0:8123/foo")
-                .log("Message body back in grpc: ${body}");
+                .log("Message body back multipart: ${body}");
                 //.to("activemq:my-activemq-queue");
     }
 }

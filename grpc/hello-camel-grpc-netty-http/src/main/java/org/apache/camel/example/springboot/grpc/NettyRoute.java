@@ -6,6 +6,7 @@ import org.apache.camel.StreamCache;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.stream.StreamCacheConverter;
 import org.apache.camel.examples.CamelHelloRequest;
+import org.apache.camel.examples.MimeContentRequest;
 import org.springframework.stereotype.Component;
 import org.xml.sax.InputSource;
 
@@ -21,6 +22,26 @@ public class NettyRoute  extends RouteBuilder {
         from("netty-http:http://0.0.0.0:8123/foo")
                 //.log("Message body back in multipart: ${body}") //multipart once logged the body will be empty
                 //.convertBodyTo(String.class)
+		//
+		//
+		//
+		//
+		//convert to a more generic grpc type then send to server
+		//not convert directly to the ending type, that's black box's job
+                .process(exchange -> {
+                    String receivedBody = exchange.getIn().getBody(String.class);
+
+                   // log.info("Message body back in multipart " + receivedBody);
+
+                    MimeContentRequest request = MimeContentRequest.newBuilder().setContent(receivedBody).build();
+                    exchange.getIn().setBody(request, MimeContentRequest.class);
+                    log.info("Message body back in grpc " + exchange.getIn().getBody());
+                })
+                //.to("seda:netty-http:http://0.0.0.0:8124/foo")
+                //.log("Message body back in grpc: ${body}")
+                .to("log:org.apache.camel.example?level=INFO");
+
+                /*from("seda:netty-http:http://0.0.0.0:8124/foo")
                 .process(exchange -> {
                     String receivedBody = exchange.getIn().getBody(String.class);
 
@@ -36,9 +57,7 @@ public class NettyRoute  extends RouteBuilder {
                 })
 
                 .log("Message body back in grpc: ${body}")
-                .to("log:org.apache.camel.example?level=INFO")
-
-        ;
+                .to("log:org.apache.camel.example?level=INFO") ;*/
     }
 
     public int nthOccurrence(String str1, String str2, int n) {
