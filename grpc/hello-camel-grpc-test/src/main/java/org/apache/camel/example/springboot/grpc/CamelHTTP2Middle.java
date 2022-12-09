@@ -22,14 +22,14 @@ import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.netty.NettyServerBootstrapConfiguration;
 import org.apache.camel.examples.CamelHelloRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.camel.examples.MimeContentRequest;
 import org.springframework.stereotype.Component;
 
 /**
  * A simple Camel gRPC route example using Spring-boot
  */
-//@Component
-public class CamelGrpcRoute extends RouteBuilder {
+@Component
+public class CamelHTTP2Middle extends RouteBuilder {
 
 
     @Override
@@ -41,7 +41,9 @@ public class CamelGrpcRoute extends RouteBuilder {
         //from uri="netty-http:http://0.0.0.0:{{port}}/foo?bootstrapConfiguration=#nettyHttpBootstrapOptions"
 
 	//setup endpoint and its behavior
-        from("timer://foo?period=5000&repeatCount=1").process(new Processor() {
+        from("timer://foo?period=5000&repeatCount=1")
+
+                .process(new Processor() {
             @Override
 	    //set the body with the object, using the interface with thr object and its type name
             public void process(Exchange exchange) throws Exception {
@@ -51,47 +53,28 @@ public class CamelGrpcRoute extends RouteBuilder {
         })
                 .log("Message body in grpc: ${body}")
                 .to("activemq:my-activemq-grpc")
-
                 .convertBodyTo(String.class)
-                .setExchangePattern(ExchangePattern.InOut)
-                .to("netty-http:http://0.0.0.0:9000/foo");
-               // .to("seda:netty-http:http://0.0.0.0:9000/foo");
-               // .to("netty-http:http://0.0.0.0:8123/foo");
-        //assumed front platform gRPC data converted to bytes (in Java, Byte is transported in form of String type)
 
-
-        //front plat netty start
+                //.setExchangePattern(ExchangePattern.InOut)
                 //.to("netty-http:http://0.0.0.0:9000/foo");
-/*        from("seda:netty-http:http://0.0.0.0:9000/foo")
-                //.transform().constant("Bye World");
-                .log("Message body back in grpc: ${body}")
+                //.to("log:org.apache.camel.example?level=INFO")
+                .to("seda:netty-http:http://0.0.0.0:9000/foo");
+        // .to("mock:start");
 
-                .to("activemq:my-activemq-grpc2Str")
 
+        from("seda:netty-http:http://0.0.0.0:9000/foo")
+                .routeId("http2middle")
                 .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-                //.mimeMultipart()
-       //front plat netty end
+                //.to("log:org.apache.camel.example?level=INFO")
+                // .to("seda:netty-http:http://0.0.0.0:8123/foo")
+                //.log("Message body back multipart: ${body}")
+                //.convertBodyTo(String.class)
+                //.convertBodyTo(String.class)
 
-       //send to another netty server
-                .to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
-                //.log("Message body back in multipart: ${body}")
-                .to("activemq:my-activemq-queue");*/
+                .to("mock:middle");
 
 
-//
-//
-//                .process(new Processor() {
-//
-//                    @Override
-//                    public void process(Exchange exchange) throws Exception {
-//                        exchange.getIn().setBody(request, CamelHelloRequest.class);
-//                    }
-//                })
-//
-//                .log("Message body back in grpc: ${body}")
-//    .to("log:org.apache.camel.example?level=INFO");
-    //.to("grpc://localhost:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
     }
 
 }

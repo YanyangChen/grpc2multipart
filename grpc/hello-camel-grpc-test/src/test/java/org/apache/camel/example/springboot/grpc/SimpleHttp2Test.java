@@ -1,24 +1,34 @@
 package org.apache.camel.example.springboot.grpc;
 
+import io.netty.buffer.ByteBuf;
 import org.apache.camel.CamelContext;
 import org.apache.camel.EndpointInject;
+import org.apache.camel.Exchange;
+import org.apache.camel.StreamCache;
 import org.apache.camel.builder.AdviceWith;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.converter.stream.InputStreamCache;
 import org.apache.camel.examples.CamelHelloRequest;
 import org.apache.camel.examples.MimeContentRequest;
+import org.apache.camel.model.dataformat.MimeMultipartDataFormat;
 import org.apache.camel.test.spring.junit5.CamelSpringBootTest;
 import org.apache.camel.test.spring.junit5.UseAdviceWith;
+import org.junit.Assert;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.OutputStream;
+import java.util.List;
 import java.util.stream.Stream;
 
 @SpringBootTest
 @CamelSpringBootTest
 @UseAdviceWith
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SimpleHttp2Test {
 
     @Autowired
@@ -35,7 +45,78 @@ public class SimpleHttp2Test {
     protected MockEndpoint mockEndpoint;
 
     @Test
-    public void testHTTP2Route() throws Exception{
+    @Order(1)
+    public void test1ClientRoute() throws Exception{
+
+        AdviceWith.adviceWith(context, "http2start", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockStartpoint);
+
+        });
+
+        mockStartpoint.allMessages().body().isInstanceOf(String.class);
+        mockStartpoint.expectedMinimumMessageCount(1);
+
+        context.start();
+
+        mockStartpoint.assertIsSatisfied();
+
+    }
+
+    @Test
+    @Order(2)
+    public void test2MiddleRoute() throws Exception{
+
+        AdviceWith.adviceWith(context, "http2middle", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockMiddlepoint);
+
+        });
+
+
+        mockMiddlepoint.allMessages().body().isNotNull();
+
+        //List<Exchange> list = mockMiddlepoint.getReceivedExchanges();
+        //String body = mockMiddlepoint.getReceivedExchanges().get(0).getIn().getBody(String.class);
+        //System.out.println("mockMiddlepoint.getReceivedExchanges() + " + body);
+        //mockMiddlepoint.allMessages().body().isInstanceOf(Exchange.class);
+//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("name");
+//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("city");
+//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("Camel");
+//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("London");
+        mockMiddlepoint.expectedMinimumMessageCount(1);
+
+        context.start();
+
+
+        //Assert.assertTrue(mockMiddlepoint.getReceivedExchanges().get(0).getIn().getBody(String.class).contains("London"));
+        mockMiddlepoint.assertIsSatisfied();
+
+    }
+
+    @Test
+    @Order(3)
+    public void test3EndRoute() throws Exception{
+
+
+        AdviceWith.adviceWith(context, "http2end", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockEndpoint);
+
+        });
+
+        mockEndpoint.allMessages().body().isInstanceOf(MimeContentRequest.class);
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("content");
+        mockEndpoint.expectedMinimumMessageCount(1);
+
+        context.start();
+
+        mockEndpoint.assertIsSatisfied();
+
+
+    }
+
+
+
+    @Test
+    public void test0HTTP2Route() throws Exception{
 
 
         //mockEndpoint.expectedBodiesReceived(expectedBody);
@@ -47,8 +128,8 @@ public class SimpleHttp2Test {
 
         });
 
-        mockStartpoint.allMessages().body().isInstanceOf(CamelHelloRequest.class);
-
+        mockStartpoint.allMessages().body().isInstanceOf(String.class);
+        mockStartpoint.expectedMinimumMessageCount(1);
 
 
         AdviceWith.adviceWith(context, "http2middle", routeBuilder ->{
@@ -56,7 +137,12 @@ public class SimpleHttp2Test {
 
         });
 
-        mockMiddlepoint.allMessages().body().isInstanceOf(String.class);
+        //mockMiddlepoint.allMessages().body().isInstanceOf(MimeContentRequest.class);
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("name");
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("city");
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("Camel");
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("London");
+        mockMiddlepoint.expectedMinimumMessageCount(1);
 
         AdviceWith.adviceWith(context, "http2end", routeBuilder ->{
             routeBuilder.weaveAddLast().to(mockEndpoint);
@@ -69,8 +155,12 @@ public class SimpleHttp2Test {
 
 
         context.start();
+        mockStartpoint.assertIsSatisfied();
+        mockMiddlepoint.assertIsSatisfied();
         mockEndpoint.assertIsSatisfied();
 
-        mockMiddlepoint.assertIsSatisfied();
+
+
+
     }
 }

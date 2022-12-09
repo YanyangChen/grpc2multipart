@@ -1,6 +1,7 @@
 package org.apache.camel.example.springboot.grpc;
 
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.examples.MimeContentRequest;
 import org.springframework.stereotype.Component;
 
 //@Component
@@ -20,6 +21,7 @@ public class NettyRouteFP  extends RouteBuilder {
 
                 //send to another netty server
                 //.to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
+
                 .log("Message body back in multipart: ${body}")
                 .to("activemq:my-activemq-queue");
     }
