@@ -47,7 +47,7 @@ public class SimpleHttp2Test {
 
         });
 
-        mockStartpoint.allMessages().body().isInstanceOf(String.class);
+        mockStartpoint.allMessages().body().isInstanceOf(CamelHelloRequest.class);
 
 
 

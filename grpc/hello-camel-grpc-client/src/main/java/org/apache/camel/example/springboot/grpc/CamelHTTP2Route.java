@@ -55,8 +55,8 @@ public class CamelHTTP2Route extends RouteBuilder {
         })
                 .log("Message body in grpc: ${body}")
                 .to("activemq:my-activemq-grpc")
-
                 .convertBodyTo(String.class)
+
                 .setExchangePattern(ExchangePattern.InOut)
                 //.to("netty-http:http://0.0.0.0:9000/foo");
                 .to("seda:netty-http:http://0.0.0.0:9000/foo")
@@ -65,6 +65,7 @@ public class CamelHTTP2Route extends RouteBuilder {
 
         from("seda:netty-http:http://0.0.0.0:9000/foo")
                 .routeId("http2middle")
+
                 .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
                 .to("seda:netty-http:http://0.0.0.0:8123/foo")
