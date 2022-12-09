@@ -42,6 +42,7 @@
         <module>hello-camel-grpc-netty-http</module>
         <module>hello-camel-grpc-netty-http9000</module>
         <module>hello-camel-grpc-client</module>
+        <module>hello-camel-grpc-test</module>
     </modules>
 
 </project>
