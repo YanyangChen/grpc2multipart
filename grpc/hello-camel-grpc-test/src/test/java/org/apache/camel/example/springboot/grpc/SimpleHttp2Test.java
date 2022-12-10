@@ -126,7 +126,7 @@ public class SimpleHttp2Test {
         //String expectedBody = "Date: Fri, 9 Dec 2022 10:39:16 +0800 (HKT)\\r\\nMessage-ID: <1559701419.1.1670553556788@debian>\\r\\nMIME-Version: 1.0\\r\\nContent-Type: multipart/mixed; \\r\\n\\tboundary=\\\"----=_Part_0_1925413803.1670553556768\\\"\\r\\n\\r\\n------=_Part_0_1925413803.1670553556768\\r\\nContent-Type: application/octet-stream\\r\\nContent-Transfer-Encoding: binary\\r\\n\\r\\nname: \\\"Camel\\\"\\ncity: \\\"London\\\"\\n\\r\\n------=_Part_0_1925413803.1670553556768--\\r\\n";
 
 
-        AdviceWith.adviceWith(context, "http2end", routeBuilder ->{
+        AdviceWith.adviceWith(context, "http2start", routeBuilder ->{
             routeBuilder.weaveAddLast().to(mockStartpoint);
 
         });
@@ -135,7 +135,7 @@ public class SimpleHttp2Test {
         mockStartpoint.expectedMinimumMessageCount(1);
 
 
-        AdviceWith.adviceWith(context, "http2end", routeBuilder ->{
+        AdviceWith.adviceWith(context, "http2middle", routeBuilder ->{
             routeBuilder.weaveAddLast().to(mockMiddlepoint);
 
         });
@@ -156,12 +156,20 @@ public class SimpleHttp2Test {
         mockEndpoint.expectedMinimumMessageCount(1);
 
 
+        AdviceWith.adviceWith(context, "http2endGrpc", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockEndGrpcPoint);
+
+        });
+
+        mockEndGrpcPoint.allMessages().body().isInstanceOf(CamelHelloRequest.class);
+        mockEndGrpcPoint.expectedMinimumMessageCount(1);
+
 
         context.start();
         mockStartpoint.assertIsSatisfied();
         mockMiddlepoint.assertIsSatisfied();
         mockEndpoint.assertIsSatisfied();
-
+        mockEndGrpcPoint.assertIsSatisfied();
 
 
 
