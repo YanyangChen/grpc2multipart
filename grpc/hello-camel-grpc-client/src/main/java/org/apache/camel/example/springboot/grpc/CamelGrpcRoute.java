@@ -46,6 +46,7 @@ public class CamelGrpcRoute extends RouteBuilder {
 	    //set the body with the object, using the interface with thr object and its type name
             public void process(Exchange exchange) throws Exception {
                 exchange.getIn().setBody(request, CamelHelloRequest.class);
+                //exchange.getIn().setBody("This is just a test to ensure garbage in garbage out");
             }
 
         })
