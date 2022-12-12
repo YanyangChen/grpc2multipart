@@ -22,6 +22,7 @@ import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.netty.NettyServerBootstrapConfiguration;
 import org.apache.camel.examples.CamelHelloRequest;
+import org.apache.camel.examples.MimeContentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -36,7 +37,7 @@ public class CamelGrpcRoute extends RouteBuilder {
     public void configure() throws Exception {
 	//setup the proto generated object
         CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("London").build();
-
+        MimeContentRequest mrequest = MimeContentRequest.newBuilder().setContent("a protobuff without assumptions").build();
         NettyServerBootstrapConfiguration nettyHttpBootstrapOptions = new NettyServerBootstrapConfiguration();
         //from uri="netty-http:http://0.0.0.0:{{port}}/foo?bootstrapConfiguration=#nettyHttpBootstrapOptions"
 
@@ -45,7 +46,8 @@ public class CamelGrpcRoute extends RouteBuilder {
             @Override
 	    //set the body with the object, using the interface with thr object and its type name
             public void process(Exchange exchange) throws Exception {
-                exchange.getIn().setBody(request, CamelHelloRequest.class);
+                //exchange.getIn().setBody(request, CamelHelloRequest.class);
+                exchange.getIn().setBody(mrequest, CamelHelloRequest.class);
                 //exchange.getIn().setBody("This is just a test to ensure garbage in garbage out");
             }
 
