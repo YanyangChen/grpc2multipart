@@ -44,6 +44,7 @@ public class CamelHTTP2Route extends RouteBuilder {
 
 	//setup endpoint and its behavior
         from("timer://foo?period=5000&repeatCount=1")
+
                 .process(new Processor() {
             @Override
 	    //set the body with the object, using the interface with thr object and its type name
@@ -77,13 +78,14 @@ public class CamelHTTP2Route extends RouteBuilder {
                 .routeId("http2end")
                 .process(exchange -> {
                     String receivedBody = exchange.getIn().getBody(String.class);
-                    log.info("receivedBody is " + exchange.getIn().getBody());
+                    log.info("receivedBody is " + exchange.getIn().getBody().getClass().getName());
                     MimeContentRequest request2 = MimeContentRequest.newBuilder().setContent(receivedBody).build();
                     exchange.getIn().setBody(request2, MimeContentRequest.class);
                     log.info("Message body back in grpc " + exchange.getIn().getBody());
                 })
-                .to("mock:end")
-                .to("log:org.apache.camel.example?level=INFO");
+                // .convertBodyTo(String.class)
+                //.to("log:org.apache.camel.example?level=INFO");
+                .to("mock:end");
 
     }
 

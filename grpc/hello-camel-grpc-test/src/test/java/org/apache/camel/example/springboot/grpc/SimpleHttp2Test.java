@@ -21,6 +21,8 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.stream.Stream;
@@ -41,8 +43,8 @@ public class SimpleHttp2Test {
     @EndpointInject("mock:middle")
     protected MockEndpoint mockMiddlepoint;
 
-    @EndpointInject("mock:result")
-    protected MockEndpoint mockEndpoint;
+    @EndpointInject("mock://end")
+    protected MockEndpoint mockEnd;
 
     @EndpointInject("mock:endgrpc")
     protected MockEndpoint mockEndGrpcPoint;
@@ -81,10 +83,10 @@ public class SimpleHttp2Test {
         //String body = mockMiddlepoint.getReceivedExchanges().get(0).getIn().getBody(String.class);
         //System.out.println("mockMiddlepoint.getReceivedExchanges() + " + body);
         //mockMiddlepoint.allMessages().body().isInstanceOf(Exchange.class);
-//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("name");
-//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("city");
-//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("Camel");
-//        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("London");
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("name");
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("city");
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("Camel");
+        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("London");
         mockMiddlepoint.expectedMinimumMessageCount(1);
 
         context.start();
@@ -99,19 +101,18 @@ public class SimpleHttp2Test {
     @Order(3)
     public void test3EndRoute() throws Exception{
 
-
         AdviceWith.adviceWith(context, "http2end", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockEndpoint);
+            routeBuilder.weaveAddLast().to(mockEnd);
 
         });
 
-        mockEndpoint.allMessages().body().isInstanceOf(MimeContentRequest.class);
-        mockMiddlepoint.allMessages().body().convertTo(String.class).contains("content");
-        mockEndpoint.expectedMinimumMessageCount(1);
+        mockEnd.allMessages().body().isInstanceOf(MimeContentRequest.class);
+        //mockEnd.allMessages().body().convertTo(String.class).contains("multipart");
+        mockEnd.expectedMinimumMessageCount(1);
 
         context.start();
 
-        mockEndpoint.assertIsSatisfied();
+        mockEnd.assertIsSatisfied();
 
 
     }
@@ -126,7 +127,7 @@ public class SimpleHttp2Test {
         //String expectedBody = "Date: Fri, 9 Dec 2022 10:39:16 +0800 (HKT)\\r\\nMessage-ID: <1559701419.1.1670553556788@debian>\\r\\nMIME-Version: 1.0\\r\\nContent-Type: multipart/mixed; \\r\\n\\tboundary=\\\"----=_Part_0_1925413803.1670553556768\\\"\\r\\n\\r\\n------=_Part_0_1925413803.1670553556768\\r\\nContent-Type: application/octet-stream\\r\\nContent-Transfer-Encoding: binary\\r\\n\\r\\nname: \\\"Camel\\\"\\ncity: \\\"London\\\"\\n\\r\\n------=_Part_0_1925413803.1670553556768--\\r\\n";
 
 
-        AdviceWith.adviceWith(context, "http2start", routeBuilder ->{
+        AdviceWith.adviceWith(context, "http2start0", routeBuilder ->{
             routeBuilder.weaveAddLast().to(mockStartpoint);
 
         });
@@ -135,7 +136,7 @@ public class SimpleHttp2Test {
         mockStartpoint.expectedMinimumMessageCount(1);
 
 
-        AdviceWith.adviceWith(context, "http2middle", routeBuilder ->{
+        AdviceWith.adviceWith(context, "http2middle0", routeBuilder ->{
             routeBuilder.weaveAddLast().to(mockMiddlepoint);
 
         });
@@ -147,13 +148,13 @@ public class SimpleHttp2Test {
         mockMiddlepoint.allMessages().body().convertTo(String.class).contains("London");
         mockMiddlepoint.expectedMinimumMessageCount(1);
 
-        AdviceWith.adviceWith(context, "http2end", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockEndpoint);
+        AdviceWith.adviceWith(context, "http2end0", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockEnd);
 
         });
 
-        mockEndpoint.allMessages().body().isInstanceOf(MimeContentRequest.class);
-        mockEndpoint.expectedMinimumMessageCount(1);
+        mockEnd.allMessages().body().isInstanceOf(MimeContentRequest.class);
+        mockEnd.expectedMinimumMessageCount(1);
 
 
         AdviceWith.adviceWith(context, "http2endGrpc", routeBuilder ->{
@@ -168,7 +169,7 @@ public class SimpleHttp2Test {
         context.start();
         mockStartpoint.assertIsSatisfied();
         mockMiddlepoint.assertIsSatisfied();
-        mockEndpoint.assertIsSatisfied();
+        mockEnd.assertIsSatisfied();
         mockEndGrpcPoint.assertIsSatisfied();
 
 

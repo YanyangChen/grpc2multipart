@@ -42,6 +42,7 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
 
 	//setup endpoint and its behavior
         from("timer://foo?period=5000&repeatCount=1")
+                .routeId("http2start0")
                 .process(new Processor() {
             @Override
 	    //set the body with the object, using the interface with thr object and its type name
@@ -57,22 +58,24 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                 .setExchangePattern(ExchangePattern.InOut)
                 //.to("netty-http:http://0.0.0.0:9000/foo");
                 .to("log:org.apache.camel.example?level=INFO")
+                .wireTap("mock:start")
                 .to("seda:netty-http:http://0.0.0.0:19500/middle");
-               // .to("mock:start");
+
 
 
         from("seda:netty-http:http://0.0.0.0:19500/middle")
 
-
+                .routeId("http2middle0")
                 .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
                 .to("log:org.apache.camel.example?level=INFO")
                 .to("seda:netty-http:http://0.0.0.0:18123/foo")
+                .wireTap("mock:middle")
                 .log("Message body back multipart: ${body}");
-               // .to("mock:middle");
+               // ;
 
         from("seda:netty-http:http://0.0.0.0:18123/foo")
-                //.routeId("http2end")
+                .routeId("http2end0")
                 .process(exchange -> {
                     String receivedBody = exchange.getIn().getBody(String.class);
                     log.info("receivedBody is " + exchange.getIn().getBody());
@@ -80,8 +83,9 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                     exchange.getIn().setBody(request2, MimeContentRequest.class);
                     log.info("Message body back in grpc " + exchange.getIn().getBody());
                 })
-                //.to("mock:end")
-                .to("seda:netty-http:http://0.0.0.0:18124/foo");
+                .to("mock:end")
+                .wireTap("seda:netty-http:http://0.0.0.0:18124/foo");
+                //.wireTap("mock:end");
 
         from("seda:netty-http:http://0.0.0.0:18124/foo")
                 .routeId("http2endGrpc")
