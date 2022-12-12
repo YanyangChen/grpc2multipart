@@ -76,15 +76,24 @@ public class CamelHTTP2Route extends RouteBuilder {
 
         from("seda:netty-http:http://0.0.0.0:8123/foo")
                 .routeId("http2end")
-                .process(exchange -> {
+                /*.process(exchange -> {
                     String receivedBody = exchange.getIn().getBody(String.class);
                     log.info("receivedBody is " + exchange.getIn().getBody().getClass().getName());
-                    MimeContentRequest request2 = MimeContentRequest.newBuilder().setContent(receivedBody).build();
-                    exchange.getIn().setBody(request2, MimeContentRequest.class);
-                    log.info("Message body back in grpc " + exchange.getIn().getBody());
-                })
+
+
+
+                   *//* MimeContentRequest request2 = MimeContentRequest.newBuilder().setContent(receivedBody).build();
+                    exchange.getIn().setBody(request2, MimeContentRequest.class);*//*
+                    //log.info("Message body back in grpc " + exchange.getIn().getBody());
+                })*/
+                //try unmarshal
+                .unmarshal()
+                .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
+
                 // .convertBodyTo(String.class)
-                //.to("log:org.apache.camel.example?level=INFO");
+
+
+
                 .to("mock:end");
 
     }

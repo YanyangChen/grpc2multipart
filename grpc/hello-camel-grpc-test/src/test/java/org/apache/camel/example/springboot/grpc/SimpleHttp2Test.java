@@ -106,8 +106,11 @@ public class SimpleHttp2Test {
 
         });
 
-        mockEnd.allMessages().body().isInstanceOf(MimeContentRequest.class);
-        //mockEnd.allMessages().body().convertTo(String.class).contains("multipart");
+//        mockEnd.allMessages().body().isInstanceOf(CamelHelloRequest.class);
+        mockEnd.allMessages().body().convertTo(String.class).contains("name: \"Camel\"\n" +"city: \"London\"");
+        //mockEnd.allMessages().body().convertTo(String.class).contains("city");
+        //mockEnd.allMessages().body().convertTo(String.class).contains("Camel");
+        //mockEnd.allMessages().body().convertTo(String.class).contains("London");
         mockEnd.expectedMinimumMessageCount(1);
 
         context.start();
@@ -118,6 +121,24 @@ public class SimpleHttp2Test {
     }
 
 
+
+
+
+    @Test
+    public void test4EndGrpcRoute() throws Exception {
+        AdviceWith.adviceWith(context, "http2endGrpc", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockEndGrpcPoint);
+
+        });
+
+        mockEndGrpcPoint.allMessages().body().isInstanceOf(CamelHelloRequest.class);
+        mockEndGrpcPoint.expectedMinimumMessageCount(1);
+
+
+
+        context.start();
+        mockEndGrpcPoint.assertIsSatisfied();
+    }
 
     @Test
     public void test0HTTP2Route() throws Exception{
@@ -174,21 +195,5 @@ public class SimpleHttp2Test {
 
 
 
-    }
-
-    @Test
-    public void test4EndGrpcRoute() throws Exception {
-        AdviceWith.adviceWith(context, "http2endGrpc", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockEndGrpcPoint);
-
-        });
-
-        mockEndGrpcPoint.allMessages().body().isInstanceOf(CamelHelloRequest.class);
-        mockEndGrpcPoint.expectedMinimumMessageCount(1);
-
-
-
-        context.start();
-        mockEndGrpcPoint.assertIsSatisfied();
     }
 }

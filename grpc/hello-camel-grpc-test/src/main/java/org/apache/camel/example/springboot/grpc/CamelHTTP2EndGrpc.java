@@ -48,6 +48,7 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
 	    //set the body with the object, using the interface with thr object and its type name
             public void process(Exchange exchange) throws Exception {
                 exchange.getIn().setBody(request, CamelHelloRequest.class);
+                
             }
 
         })
@@ -57,21 +58,23 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
 
                 .setExchangePattern(ExchangePattern.InOut)
                 //.to("netty-http:http://0.0.0.0:9000/foo");
-                .to("log:org.apache.camel.example?level=INFO")
-                .wireTap("mock:start")
-                .to("seda:netty-http:http://0.0.0.0:19500/middle");
+                //.to("log:org.apache.camel.example?level=INFO")
+                //.wireTap("mock:start")
+                .log("Message body after grpc: ${body}")
+                .wireTap("seda:grpc://0.0.0.0:19500/middle");
 
 
 
-        from("seda:netty-http:http://0.0.0.0:19500/middle")
+        from("seda:grpc://0.0.0.0:19500/middle")
 
                 .routeId("http2middle0")
                 .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-                .to("log:org.apache.camel.example?level=INFO")
-                .to("seda:netty-http:http://0.0.0.0:18123/foo")
-                .wireTap("mock:middle")
-                .log("Message body back multipart: ${body}");
+                //.to("log:org.apache.camel.example?level=INFO")
+                .log("Message body after multipart: ${body}")
+                .wireTap("seda:netty-http:http://0.0.0.0:18123/foo");
+                //.wireTap("mock:middle")
+                //.log("Message body back multipart: ${body}");
                // ;
 
         from("seda:netty-http:http://0.0.0.0:18123/foo")
@@ -83,7 +86,7 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                     exchange.getIn().setBody(request2, MimeContentRequest.class);
                     log.info("Message body back in grpc " + exchange.getIn().getBody());
                 })
-                .to("mock:end")
+                //.to("mock:end")
                 .wireTap("seda:netty-http:http://0.0.0.0:18124/foo");
                 //.wireTap("mock:end");
 
@@ -104,10 +107,10 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                     log.info("received City is " + city);
                     CamelHelloRequest requestEnd = CamelHelloRequest.newBuilder().setName(name).setCity(city).build();
                     exchange.getIn().setBody(requestEnd, CamelHelloRequest.class);
-                })
+                });
 
                 //.log("Message body back in grpc: ${body}")
-                .to("mock:endgrpc");
+                //.to("mock:endgrpc");
                 //.to("seda:netty-http:http://0.0.0.0:8124/foo");
 
     }
