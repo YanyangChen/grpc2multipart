@@ -26,6 +26,9 @@ import org.apache.camel.examples.MimeContentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
+import java.util.Arrays;
+
 /**
  * A simple Camel gRPC route example using Spring-boot
  */
@@ -36,65 +39,27 @@ public class CamelGrpcRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 	//setup the proto generated object
-        CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("London").build();
+        //CamelHelloRequest request = CamelHelloRequest.newBuilder().setName("Camel").setCity("London").build();
         MimeContentRequest mrequest = MimeContentRequest.newBuilder().setContent("a protobuff without assumptions").build();
-        NettyServerBootstrapConfiguration nettyHttpBootstrapOptions = new NettyServerBootstrapConfiguration();
+        //NettyServerBootstrapConfiguration nettyHttpBootstrapOptions = new NettyServerBootstrapConfiguration();
         //from uri="netty-http:http://0.0.0.0:{{port}}/foo?bootstrapConfiguration=#nettyHttpBootstrapOptions"
 
 	//setup endpoint and its behavior
-        from("timer://foo?period=5000&repeatCount=1").process(new Processor() {
-            @Override
-	    //set the body with the object, using the interface with thr object and its type name
-            public void process(Exchange exchange) throws Exception {
-                //exchange.getIn().setBody(request, CamelHelloRequest.class);
-                exchange.getIn().setBody(mrequest, CamelHelloRequest.class);
-                //exchange.getIn().setBody("This is just a test to ensure garbage in garbage out");
-            }
-
-        })
-                .log("Message body in grpc: ${body}")
-                .to("activemq:my-activemq-grpc")
-
-                .convertBodyTo(String.class)
-                .setExchangePattern(ExchangePattern.InOut)
-                .to("netty-http:http://0.0.0.0:9000/foo");
-               // .to("seda:netty-http:http://0.0.0.0:9000/foo");
-               // .to("netty-http:http://0.0.0.0:8123/foo");
-        //assumed front platform gRPC data converted to bytes (in Java, Byte is transported in form of String type)
-
-
-        //front plat netty start
-                //.to("netty-http:http://0.0.0.0:9000/foo");
-/*        from("seda:netty-http:http://0.0.0.0:9000/foo")
-                //.transform().constant("Bye World");
-                .log("Message body back in grpc: ${body}")
-
-                .to("activemq:my-activemq-grpc2Str")
-
-                .marshal()
-                .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-                //.mimeMultipart()
-       //front plat netty end
-
-       //send to another netty server
-                .to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
-                //.log("Message body back in multipart: ${body}")
-                .to("activemq:my-activemq-queue");*/
-
-
+        //from("timer://foo?period=5000&repeatCount=1")
+        from("file:files/input?flatten=true&noop=true")
+//        .process(new Processor() {
+//            @Override
+//	    //set the body with the object, using the interface with thr object and its type name
+//            public void process(Exchange exchange) throws Exception {
+//                //exchange.getIn().setBody(request, CamelHelloRequest.class);
+//                  exchange.getIn().setBody(mrequest, CamelHelloRequest.class);
+//                //exchange.getIn().setBody("This is just a test to ensure garbage in garbage out");
+//            }
 //
-//
-//                .process(new Processor() {
-//
-//                    @Override
-//                    public void process(Exchange exchange) throws Exception {
-//                        exchange.getIn().setBody(request, CamelHelloRequest.class);
-//                    }
-//                })
-//
-//                .log("Message body back in grpc: ${body}")
-//    .to("log:org.apache.camel.example?level=INFO");
-    //.to("grpc://localhost:50051/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
+//        })
+//                .convertBodyTo(String.class)
+                .to("netty-http:http://0.0.0.0:9000/foo?chunkedMaxContentLength=20971520");
+
     }
 
 }

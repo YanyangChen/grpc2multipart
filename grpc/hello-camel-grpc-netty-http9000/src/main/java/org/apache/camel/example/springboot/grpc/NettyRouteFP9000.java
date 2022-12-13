@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 public class NettyRouteFP9000  extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-        from("netty-http:http://0.0.0.0:9000/foo")
+        from("netty-http:http://0.0.0.0:9000/foo?chunkedMaxContentLength=20971520")
                 //.transform().constant("Bye World");
-                //.log("Message body back in grpc: ${body}")
+                //.log("Message Head grpc: ${headers}")
 
                 //.to("activemq:my-activemq-grpc2Str")
 
@@ -21,8 +21,9 @@ public class NettyRouteFP9000  extends RouteBuilder {
                 //send to another netty server
                 //.to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
                 //.log("Message body back in multipart: ${body}")
-                .wireTap("netty-http:http://0.0.0.0:8123/foo")
-                .log("Message body back multipart: ${body}");
+                .to("netty-http:http://0.0.0.0:8123/foo?chunkedMaxContentLength=20971520");
+                //.log("Message body in multipart: ${body}")
+                //.log("Message body in multipart header: ${headers}");
                 //.to("activemq:my-activemq-queue");
     }
 }
