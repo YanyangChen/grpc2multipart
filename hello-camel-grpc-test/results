@@ -1,0 +1,1421 @@
+================== testing results ==================
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.bitness: 64
+[[1;34mINFO[m] os.detected.version: 5.19
+[[1;34mINFO[m] os.detected.version.major: 5
+[[1;34mINFO[m] os.detected.version.minor: 19
+[[1;34mINFO[m] os.detected.release: debian
+[[1;34mINFO[m] os.detected.release.version: 11
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.apache.camel.springboot.example:camel-example-hello-grpc-test[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding Camel SB Examples :: gRPC :: Hello Camel Client 3.16.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-custom[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcamel-package-maven-plugin:3.16.0:prepare-example[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:compile[m [1m(default-compile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:testCompile[m [1m(default-testCompile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+11:05:06.674 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:05:06.687 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:05:06.710 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:05:06.716 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test], using SpringBootContextLoader
+11:05:06.718 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2Test-context.xml] does not exist
+11:05:06.718 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2TestContext.groovy] does not exist
+11:05:06.718 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:05:06.719 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: SimpleHttp2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:05:06.744 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]
+11:05:06.774 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/target/classes/org/apache/camel/example/springboot/grpc/Application.class]
+11:05:06.775 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.apache.camel.example.springboot.grpc.Application for test class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:06.817 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Merging default listeners with listeners configured via @TestExecutionListeners for class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test].
+11:05:06.817 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
+11:05:06.821 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+11:05:06.825 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.apache.camel.test.spring.junit5.CamelSpringTestContextLoaderTestExecutionListener@4ce7fffa, org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener@497486b3, org.apache.camel.test.spring.junit5.StopWatchTestExecutionListener@63f8276e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75f95314, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6127a7e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6bbe2511, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@495fac5f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76012793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@635572a7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79d94571, org.springframework.test.context.event.EventPublishingTestExecutionListener@4dd02341, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3212a8d7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a1a3478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@495b0487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@55dfcc6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@222eb8aa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@93cf163]
+11:05:06.842 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@260e86a1 testClass = SimpleHttp2Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@19648c40 testClass = SimpleHttp2Test, locations = '{}', classes = '{class org.apache.camel.example.springboot.grpc.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@14fc5f04, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6a8658ff, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@821330f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f0f2942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2d0399f4, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2df32bf7], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+11:05:06.847 [main] INFO org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener - CamelSpringBootExecutionListener preparing: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:06.848 [main] INFO org.apache.camel.test.spring.junit5.CamelAnnotationsHandler - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.4)
+
+2022-12-14 11:05:07.017  INFO 10697 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Starting SimpleHttp2Test using Java 17.0.4 on debian with PID 10697 (started by root in /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test)
+2022-12-14 11:05:07.018  INFO 10697 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : No active profile set, falling back to 1 default profile: "default"
+2022-12-14 11:05:08.798  INFO 10697 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Started SimpleHttp2Test in 1.929 seconds (JVM running for 2.684)
+2022-12-14 11:05:08.812  INFO 10697 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Setting shutdown timeout to [10 SECONDS] on CamelContext with name [camelContext].
+2022-12-14 11:05:08.954  INFO 10697 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener before: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test0HTTP2Route
+2022-12-14 11:05:08.955  INFO 10697 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : Initialized CamelSpringBootExecutionListener now ready to start CamelContext
+2022-12-14 11:05:08.955  INFO 10697 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2022-12-14 11:05:09.501  INFO 10697 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [WireTap[seda:grpc://0.0.0.0:19500/middle]] --> after [To[mock://start]]
+2022-12-14 11:05:09.502  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2start0)[From[timer://foo?period=5000&repeatCount=1] -> [process[Processor@0x6f65a203], Log[Message body in grpc: ${body}], To[activemq:my-activemq-grpc], ConvertBodyTo[java.lang.String], setExchangePattern[pattern: InOut], Log[Message body after grpc: ${body}], WireTap[seda:grpc://0.0.0.0:19500/middle], To[mock://start]]]
+2022-12-14 11:05:09.521  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2start0">
+    <from uri="timer://foo?period=5000&amp;repeatCount=1"/>
+    <process/>
+    <log message="Message body in grpc: ${body}"/>
+    <to uri="activemq:my-activemq-grpc"/>
+    <convertBodyTo type="java.lang.String"/>
+    <setExchangePattern pattern="InOut"/>
+    <log message="Message body after grpc: ${body}"/>
+    <wireTap uri="seda:grpc://0.0.0.0:19500/middle"/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2start0">
+    <from uri="timer://foo?period=5000&amp;repeatCount=1"/>
+    <process/>
+    <log message="Message body in grpc: ${body}"/>
+    <to uri="activemq:my-activemq-grpc"/>
+    <convertBodyTo type="java.lang.String"/>
+    <setExchangePattern pattern="InOut"/>
+    <log message="Message body after grpc: ${body}"/>
+    <wireTap uri="seda:grpc://0.0.0.0:19500/middle"/>
+    <to uri="mock://start"/>
+</route>
+2022-12-14 11:05:09.525  INFO 10697 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [WireTap[seda:netty-http:http://0.0.0.0:18123/foo]] --> after [To[mock://middle]]
+2022-12-14 11:05:09.527  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2middle0)[From[seda:grpc://0.0.0.0:19500/middle] -> [Marshal[org.apache.camel.model.dataformat.MimeMultipartDataFormat@778197c0], Log[Message body after multipart: ${body}], WireTap[seda:netty-http:http://0.0.0.0:18123/foo], To[mock://middle]]]
+2022-12-14 11:05:09.529  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2middle0">
+    <from uri="seda:grpc://0.0.0.0:19500/middle"/>
+    <marshal>
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </marshal>
+    <log message="Message body after multipart: ${body}"/>
+    <wireTap uri="seda:netty-http:http://0.0.0.0:18123/foo"/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2middle0">
+    <from uri="seda:grpc://0.0.0.0:19500/middle"/>
+    <marshal>
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </marshal>
+    <log message="Message body after multipart: ${body}"/>
+    <wireTap uri="seda:netty-http:http://0.0.0.0:18123/foo"/>
+    <to uri="mock://middle"/>
+</route>
+2022-12-14 11:05:09.532  INFO 10697 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [WireTap[seda:netty-http:http://0.0.0.0:18124/foo]] --> after [To[mock://end]]
+2022-12-14 11:05:09.532  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2end0)[From[seda:netty-http:http://0.0.0.0:18123/foo] -> [process[Processor@0x1169fdfd], WireTap[seda:netty-http:http://0.0.0.0:18124/foo], To[mock://end]]]
+2022-12-14 11:05:09.533  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2end0">
+    <from uri="seda:netty-http:http://0.0.0.0:18123/foo"/>
+    <process/>
+    <wireTap uri="seda:netty-http:http://0.0.0.0:18124/foo"/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2end0">
+    <from uri="seda:netty-http:http://0.0.0.0:18123/foo"/>
+    <process/>
+    <wireTap uri="seda:netty-http:http://0.0.0.0:18124/foo"/>
+    <to uri="mock://end"/>
+</route>
+2022-12-14 11:05:09.535  INFO 10697 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [process[Processor@0x48f4f03e]] --> after [To[mock://endgrpc]]
+2022-12-14 11:05:09.535  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2endGrpc)[From[seda:netty-http:http://0.0.0.0:18124/foo] -> [process[Processor@0x48f4f03e], To[mock://endgrpc]]]
+2022-12-14 11:05:09.536  INFO 10697 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2endGrpc">
+    <from uri="seda:netty-http:http://0.0.0.0:18124/foo"/>
+    <process/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2endGrpc">
+    <from uri="seda:netty-http:http://0.0.0.0:18124/foo"/>
+    <process/>
+    <to uri="mock://endgrpc"/>
+</route>
+2022-12-14 11:05:09.727  INFO 10697 --- [           main] o.a.camel.component.file.FileEndpoint    : Endpoint is configured with noop=true so forcing endpoint to be idempotent as well
+2022-12-14 11:05:09.727  INFO 10697 --- [           main] o.a.camel.component.file.FileEndpoint    : Using default memory based idempotent repository with cache max size: 1000
+2022-12-14 11:05:09.740  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) is starting
+2022-12-14 11:05:09.746  INFO 10697 --- [           main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running
+2022-12-14 11:05:09.749  INFO 10697 --- [inRunController] org.apache.camel.main.MainSupport        : Apache Camel (Main) 3.16.0 is starting
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:13 started:13)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start0 (timer://foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route1 (file://files/input)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route3 (timer://foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route4 (timer://foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start (timer://foo)
+2022-12-14 11:05:09.771  INFO 10697 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) started in 335ms (build:102ms init:203ms start:30ms)
+2022-12-14 11:05:09.773  INFO 10697 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://start is satisfied
+2022-12-14 11:05:10.834  INFO 10697 --- [0 - timer://foo] http2start0                              : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:11.051  INFO 10697 --- [0 - timer://foo] http2start0                              : Message body after grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:11.054  INFO 10697 --- [0 - timer://foo] route3                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:11.055  INFO 10697 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://middle is satisfied
+2022-12-14 11:05:11.061  INFO 10697 --- [.0:19500/middle] http2middle0                             : Message body after multipart: Date: Wed, 14 Dec 2022 11:05:11 +0800 (HKT)
+Message-ID: <82457102.3.1670987111061@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_718756005.1670987111059"
+
+------=_Part_2_718756005.1670987111059
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_718756005.1670987111059--
+
+2022-12-14 11:05:11.063  INFO 10697 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://end is satisfied
+2022-12-14 11:05:11.063  INFO 10697 --- [0 - timer://foo] http2start                               : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:11.066  INFO 10697 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : receivedBody is [B@130641d7
+2022-12-14 11:05:11.069  INFO 10697 --- [0 - timer://foo] route4                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:11.069  INFO 10697 --- [0 - timer://foo] route4                                   : Message headers in grpc: {CamelMessageTimestamp=1670987111069, firedTime=Wed Dec 14 11:05:11 HKT 2022}
+2022-12-14 11:05:11.071  INFO 10697 --- [0 - timer://foo] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: String, Body: name: "Camel"city: "London"]
+2022-12-14 11:05:11.072  INFO 10697 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in grpc content: "Date: Wed, 14 Dec 2022 11:05:11 +0800 (HKT)\r\nMessage-ID: <82457102.3.1670987111061@debian>\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; \r\n\tboundary=\"----=_Part_2_718756005.1670987111059\"\r\n\r\n------=_Part_2_718756005.1670987111059\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nname: \"Camel\"\ncity: \"London\"\n\r\n------=_Part_2_718756005.1670987111059--\r\n"
+
+2022-12-14 11:05:11.074  INFO 10697 --- [0.0:9500/middle] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: byte[], Body: Date: Wed, 14 Dec 2022 11:05:11 +0800 (HKT)Message-ID: <233978328.7.1670987111074@debian>MIME-Version: 1.0Content-Type: multipart/mixed; 	boundary="----=_Part_6_1632865263.1670987111074"------=_Part_6_1632865263.1670987111074Content-Type: application/octet-streamContent-Transfer-Encoding: binaryname: "Camel"city: "London"------=_Part_6_1632865263.1670987111074--]
+2022-12-14 11:05:11.075  INFO 10697 --- [.0.0.0:8123/foo] http2end                                 : Message headers in ending grpc: {CamelMessageTimestamp=1670987111069, Date=Wed, 14 Dec 2022 11:05:11 +0800 (HKT), firedTime=Wed Dec 14 11:05:11 HKT 2022}
+2022-12-14 11:05:11.075  INFO 10697 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://endgrpc is satisfied
+2022-12-14 11:05:11.076  INFO 10697 --- [0.0:9500/middle] route5                                   : Message body back multipart: Date: Wed, 14 Dec 2022 11:05:11 +0800 (HKT)
+Message-ID: <233978328.7.1670987111074@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_6_1632865263.1670987111074"
+
+------=_Part_6_1632865263.1670987111074
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_6_1632865263.1670987111074--
+
+2022-12-14 11:05:11.077  INFO 10697 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in multipart Date: Wed, 14 Dec 2022 11:05:11 +0800 (HKT)
+Message-ID: <82457102.3.1670987111061@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_718756005.1670987111059"
+
+------=_Part_2_718756005.1670987111059
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_718756005.1670987111059--
+
+2022-12-14 11:05:11.077  INFO 10697 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received Name is Camel
+2022-12-14 11:05:11.077  INFO 10697 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received City is London
+2022-12-14 11:05:11.081  INFO 10697 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:11.082  INFO 10697 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Testing done: test0HTTP2Route (org.apache.camel.example.springboot.grpc.SimpleHttp2Test)
+2022-12-14 11:05:11.082  INFO 10697 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Took: 2s126ms (2126 millis)
+2022-12-14 11:05:11.082  INFO 10697 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:11.082  INFO 10697 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener after: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test0HTTP2Route
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.507 s - in org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+2022-12-14 11:05:11.133  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutting down (timeout:10s)
+2022-12-14 11:05:16.088  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (total:13 stopped:13)
+2022-12-14 11:05:16.088  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start (timer://foo)
+2022-12-14 11:05:16.088  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:16.088  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:16.088  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route4 (timer://foo)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route3 (timer://foo)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route1 (file://files/input)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start0 (timer://foo)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:16.089  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:16.095  INFO 10697 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutdown in 4s962ms (uptime:6s354ms)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  12.372 s
+[[1;34mINFO[m] Finished at: 2022-12-14T11:05:16+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.bitness: 64
+[[1;34mINFO[m] os.detected.version: 5.19
+[[1;34mINFO[m] os.detected.version.major: 5
+[[1;34mINFO[m] os.detected.version.minor: 19
+[[1;34mINFO[m] os.detected.release: debian
+[[1;34mINFO[m] os.detected.release.version: 11
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.apache.camel.springboot.example:camel-example-hello-grpc-test[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding Camel SB Examples :: gRPC :: Hello Camel Client 3.16.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-custom[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcamel-package-maven-plugin:3.16.0:prepare-example[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:compile[m [1m(default-compile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:testCompile[m [1m(default-testCompile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+11:05:19.459 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:05:19.464 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:05:19.484 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:05:19.490 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test], using SpringBootContextLoader
+11:05:19.492 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2Test-context.xml] does not exist
+11:05:19.493 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2TestContext.groovy] does not exist
+11:05:19.493 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:05:19.494 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: SimpleHttp2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:05:19.520 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]
+11:05:19.547 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/target/classes/org/apache/camel/example/springboot/grpc/Application.class]
+11:05:19.549 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.apache.camel.example.springboot.grpc.Application for test class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:19.607 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Merging default listeners with listeners configured via @TestExecutionListeners for class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test].
+11:05:19.607 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
+11:05:19.612 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+11:05:19.617 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.apache.camel.test.spring.junit5.CamelSpringTestContextLoaderTestExecutionListener@4ce7fffa, org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener@497486b3, org.apache.camel.test.spring.junit5.StopWatchTestExecutionListener@63f8276e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75f95314, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6127a7e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6bbe2511, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@495fac5f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76012793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@635572a7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79d94571, org.springframework.test.context.event.EventPublishingTestExecutionListener@4dd02341, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3212a8d7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a1a3478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@495b0487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@55dfcc6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@222eb8aa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@93cf163]
+11:05:19.635 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@260e86a1 testClass = SimpleHttp2Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@19648c40 testClass = SimpleHttp2Test, locations = '{}', classes = '{class org.apache.camel.example.springboot.grpc.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@14fc5f04, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6a8658ff, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@821330f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f0f2942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2d0399f4, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2df32bf7], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+11:05:19.642 [main] INFO org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener - CamelSpringBootExecutionListener preparing: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:19.644 [main] INFO org.apache.camel.test.spring.junit5.CamelAnnotationsHandler - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.4)
+
+2022-12-14 11:05:19.780  INFO 10815 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Starting SimpleHttp2Test using Java 17.0.4 on debian with PID 10815 (started by root in /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test)
+2022-12-14 11:05:19.781  INFO 10815 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : No active profile set, falling back to 1 default profile: "default"
+2022-12-14 11:05:21.029  INFO 10815 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Started SimpleHttp2Test in 1.373 seconds (JVM running for 2.051)
+2022-12-14 11:05:21.034  INFO 10815 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Setting shutdown timeout to [10 SECONDS] on CamelContext with name [camelContext].
+2022-12-14 11:05:21.144  INFO 10815 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener before: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test1ClientRoute
+2022-12-14 11:05:21.144  INFO 10815 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : Initialized CamelSpringBootExecutionListener now ready to start CamelContext
+2022-12-14 11:05:21.145  INFO 10815 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2022-12-14 11:05:21.822  INFO 10815 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [To[mock:start]] --> after [To[mock://start]]
+2022-12-14 11:05:21.824  INFO 10815 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2start)[From[timer://foo?period=5000&repeatCount=1] -> [process[Processor@0x46188a89], Log[Message body in grpc: ${body}], To[activemq:my-activemq-grpc], ConvertBodyTo[java.lang.String], setExchangePattern[pattern: InOut], To[mock:start], To[mock://start]]]
+2022-12-14 11:05:21.827  INFO 10815 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2start">
+    <from uri="timer://foo?period=5000&amp;repeatCount=1"/>
+    <process/>
+    <log message="Message body in grpc: ${body}"/>
+    <to uri="activemq:my-activemq-grpc"/>
+    <convertBodyTo type="java.lang.String"/>
+    <setExchangePattern pattern="InOut"/>
+    <to uri="mock:start"/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2start">
+    <from uri="timer://foo?period=5000&amp;repeatCount=1"/>
+    <process/>
+    <log message="Message body in grpc: ${body}"/>
+    <to uri="activemq:my-activemq-grpc"/>
+    <convertBodyTo type="java.lang.String"/>
+    <setExchangePattern pattern="InOut"/>
+    <to uri="mock:start"/>
+    <to uri="mock://start"/>
+</route>
+2022-12-14 11:05:21.981  INFO 10815 --- [           main] o.a.camel.component.file.FileEndpoint    : Endpoint is configured with noop=true so forcing endpoint to be idempotent as well
+2022-12-14 11:05:21.981  INFO 10815 --- [           main] o.a.camel.component.file.FileEndpoint    : Using default memory based idempotent repository with cache max size: 1000
+2022-12-14 11:05:21.983  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) is starting
+2022-12-14 11:05:21.990  INFO 10815 --- [           main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running
+2022-12-14 11:05:21.994  INFO 10815 --- [inRunController] org.apache.camel.main.MainSupport        : Apache Camel (Main) 3.16.0 is starting
+2022-12-14 11:05:22.006  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:13 started:13)
+2022-12-14 11:05:22.006  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start (timer://foo)
+2022-12-14 11:05:22.006  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start0 (timer://foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route1 (file://files/input)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route3 (timer://foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route4 (timer://foo)
+2022-12-14 11:05:22.007  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:22.009  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:22.009  INFO 10815 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) started in 281ms (build:102ms init:153ms start:26ms)
+2022-12-14 11:05:22.010  INFO 10815 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://start is satisfied
+2022-12-14 11:05:23.138  INFO 10815 --- [0 - timer://foo] http2start                               : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:23.403  INFO 10815 --- [0 - timer://foo] http2start0                              : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:23.408  INFO 10815 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:23.408  INFO 10815 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Testing done: test1ClientRoute (org.apache.camel.example.springboot.grpc.SimpleHttp2Test)
+2022-12-14 11:05:23.408  INFO 10815 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Took: 2s263ms (2263 millis)
+2022-12-14 11:05:23.408  INFO 10815 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:23.409  INFO 10815 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener after: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test1ClientRoute
+2022-12-14 11:05:23.413  INFO 10815 --- [0 - timer://foo] http2start0                              : Message body after grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:23.416  INFO 10815 --- [0 - timer://foo] route4                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:23.417  INFO 10815 --- [0 - timer://foo] route4                                   : Message headers in grpc: {CamelMessageTimestamp=1670987123415, firedTime=Wed Dec 14 11:05:23 HKT 2022}
+2022-12-14 11:05:23.418  INFO 10815 --- [0 - timer://foo] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: String, Body: name: "Camel"city: "London"]
+2022-12-14 11:05:23.425  INFO 10815 --- [0.0:9500/middle] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: byte[], Body: Date: Wed, 14 Dec 2022 11:05:23 +0800 (HKT)Message-ID: <684533023.3.1670987123425@debian>MIME-Version: 1.0Content-Type: multipart/mixed; 	boundary="----=_Part_2_726704894.1670987123425"------=_Part_2_726704894.1670987123425Content-Type: application/octet-streamContent-Transfer-Encoding: binaryname: "Camel"city: "London"------=_Part_2_726704894.1670987123425--]
+2022-12-14 11:05:23.428  INFO 10815 --- [.0.0.0:8123/foo] http2end                                 : Message headers in ending grpc: {CamelMessageTimestamp=1670987123415, Date=Wed, 14 Dec 2022 11:05:23 +0800 (HKT), firedTime=Wed Dec 14 11:05:23 HKT 2022}
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.037 s - in org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+2022-12-14 11:05:23.432  INFO 10815 --- [0.0:9500/middle] route5                                   : Message body back multipart: Date: Wed, 14 Dec 2022 11:05:23 +0800 (HKT)
+Message-ID: <684533023.3.1670987123425@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_726704894.1670987123425"
+
+------=_Part_2_726704894.1670987123425
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_726704894.1670987123425--
+
+2022-12-14 11:05:23.439  INFO 10815 --- [0 - timer://foo] route3                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:23.453  INFO 10815 --- [.0:19500/middle] http2middle0                             : Message body after multipart: Date: Wed, 14 Dec 2022 11:05:23 +0800 (HKT)
+Message-ID: <1438369801.7.1670987123453@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_5_1869831219.1670987123452"
+
+------=_Part_5_1869831219.1670987123452
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_5_1869831219.1670987123452--
+
+2022-12-14 11:05:23.458  INFO 10815 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : receivedBody is [B@103a11ed
+2022-12-14 11:05:23.460  INFO 10815 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in grpc content: "Date: Wed, 14 Dec 2022 11:05:23 +0800 (HKT)\r\nMessage-ID: <1438369801.7.1670987123453@debian>\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; \r\n\tboundary=\"----=_Part_5_1869831219.1670987123452\"\r\n\r\n------=_Part_5_1869831219.1670987123452\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nname: \"Camel\"\ncity: \"London\"\n\r\n------=_Part_5_1869831219.1670987123452--\r\n"
+
+2022-12-14 11:05:23.468  INFO 10815 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in multipart Date: Wed, 14 Dec 2022 11:05:23 +0800 (HKT)
+Message-ID: <1438369801.7.1670987123453@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_5_1869831219.1670987123452"
+
+------=_Part_5_1869831219.1670987123452
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_5_1869831219.1670987123452--
+
+2022-12-14 11:05:23.468  INFO 10815 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received Name is Camel
+2022-12-14 11:05:23.468  INFO 10815 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received City is London
+2022-12-14 11:05:23.508  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutting down (timeout:10s)
+2022-12-14 11:05:28.472  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (total:13 stopped:13)
+2022-12-14 11:05:28.472  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:28.473  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:28.473  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route4 (timer://foo)
+2022-12-14 11:05:28.473  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:28.473  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route3 (timer://foo)
+2022-12-14 11:05:28.473  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:28.473  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:28.473  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route1 (file://files/input)
+2022-12-14 11:05:28.474  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:28.474  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:28.474  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:28.474  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start0 (timer://foo)
+2022-12-14 11:05:28.474  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start (timer://foo)
+2022-12-14 11:05:28.476  INFO 10815 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutdown in 4s968ms (uptime:6s493ms)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  11.788 s
+[[1;34mINFO[m] Finished at: 2022-12-14T11:05:28+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.bitness: 64
+[[1;34mINFO[m] os.detected.version: 5.19
+[[1;34mINFO[m] os.detected.version.major: 5
+[[1;34mINFO[m] os.detected.version.minor: 19
+[[1;34mINFO[m] os.detected.release: debian
+[[1;34mINFO[m] os.detected.release.version: 11
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.apache.camel.springboot.example:camel-example-hello-grpc-test[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding Camel SB Examples :: gRPC :: Hello Camel Client 3.16.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-custom[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcamel-package-maven-plugin:3.16.0:prepare-example[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:compile[m [1m(default-compile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:testCompile[m [1m(default-testCompile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+11:05:31.843 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:05:31.848 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:05:31.868 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:05:31.874 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test], using SpringBootContextLoader
+11:05:31.877 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2Test-context.xml] does not exist
+11:05:31.877 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2TestContext.groovy] does not exist
+11:05:31.878 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:05:31.879 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: SimpleHttp2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:05:31.904 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]
+11:05:31.932 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/target/classes/org/apache/camel/example/springboot/grpc/Application.class]
+11:05:31.934 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.apache.camel.example.springboot.grpc.Application for test class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:31.983 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Merging default listeners with listeners configured via @TestExecutionListeners for class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test].
+11:05:31.983 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
+11:05:31.988 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+11:05:31.992 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.apache.camel.test.spring.junit5.CamelSpringTestContextLoaderTestExecutionListener@4ce7fffa, org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener@497486b3, org.apache.camel.test.spring.junit5.StopWatchTestExecutionListener@63f8276e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75f95314, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6127a7e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6bbe2511, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@495fac5f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76012793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@635572a7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79d94571, org.springframework.test.context.event.EventPublishingTestExecutionListener@4dd02341, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3212a8d7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a1a3478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@495b0487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@55dfcc6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@222eb8aa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@93cf163]
+11:05:32.010 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@260e86a1 testClass = SimpleHttp2Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@19648c40 testClass = SimpleHttp2Test, locations = '{}', classes = '{class org.apache.camel.example.springboot.grpc.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@14fc5f04, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6a8658ff, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@821330f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f0f2942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2d0399f4, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2df32bf7], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+11:05:32.017 [main] INFO org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener - CamelSpringBootExecutionListener preparing: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:32.019 [main] INFO org.apache.camel.test.spring.junit5.CamelAnnotationsHandler - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.4)
+
+2022-12-14 11:05:32.203  INFO 10930 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Starting SimpleHttp2Test using Java 17.0.4 on debian with PID 10930 (started by root in /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test)
+2022-12-14 11:05:32.205  INFO 10930 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : No active profile set, falling back to 1 default profile: "default"
+2022-12-14 11:05:33.752  INFO 10930 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Started SimpleHttp2Test in 1.722 seconds (JVM running for 2.408)
+2022-12-14 11:05:33.756  INFO 10930 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Setting shutdown timeout to [10 SECONDS] on CamelContext with name [camelContext].
+2022-12-14 11:05:33.826  INFO 10930 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener before: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test2MiddleRoute
+2022-12-14 11:05:33.827  INFO 10930 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : Initialized CamelSpringBootExecutionListener now ready to start CamelContext
+2022-12-14 11:05:33.827  INFO 10930 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2022-12-14 11:05:34.498  INFO 10930 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [To[mock:middle]] --> after [To[mock://middle]]
+2022-12-14 11:05:34.500  INFO 10930 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2middle)[From[seda:netty-http:http://0.0.0.0:9000/foo] -> [Marshal[org.apache.camel.model.dataformat.MimeMultipartDataFormat@3b2c8bda], To[mock:middle], To[mock://middle]]]
+2022-12-14 11:05:34.509  INFO 10930 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2middle">
+    <from uri="seda:netty-http:http://0.0.0.0:9000/foo"/>
+    <marshal>
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </marshal>
+    <to uri="mock:middle"/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2middle">
+    <from uri="seda:netty-http:http://0.0.0.0:9000/foo"/>
+    <marshal>
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </marshal>
+    <to uri="mock:middle"/>
+    <to uri="mock://middle"/>
+</route>
+2022-12-14 11:05:34.730  INFO 10930 --- [           main] o.a.camel.component.file.FileEndpoint    : Endpoint is configured with noop=true so forcing endpoint to be idempotent as well
+2022-12-14 11:05:34.731  INFO 10930 --- [           main] o.a.camel.component.file.FileEndpoint    : Using default memory based idempotent repository with cache max size: 1000
+2022-12-14 11:05:34.734  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) is starting
+2022-12-14 11:05:34.745  INFO 10930 --- [           main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running
+2022-12-14 11:05:34.752  INFO 10930 --- [inRunController] org.apache.camel.main.MainSupport        : Apache Camel (Main) 3.16.0 is starting
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:13 started:13)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start0 (timer://foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route1 (file://files/input)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route3 (timer://foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route4 (timer://foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start (timer://foo)
+2022-12-14 11:05:34.770  INFO 10930 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) started in 338ms (build:82ms init:221ms start:35ms)
+2022-12-14 11:05:34.773  INFO 10930 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://middle is satisfied
+2022-12-14 11:05:35.865  INFO 10930 --- [0 - timer://foo] http2start0                              : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:36.205  INFO 10930 --- [0 - timer://foo] http2start0                              : Message body after grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:36.212  INFO 10930 --- [0 - timer://foo] route3                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:36.218  INFO 10930 --- [.0:19500/middle] http2middle0                             : Message body after multipart: Date: Wed, 14 Dec 2022 11:05:36 +0800 (HKT)
+Message-ID: <1688653759.3.1670987136215@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_1578872455.1670987136215"
+
+------=_Part_2_1578872455.1670987136215
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_1578872455.1670987136215--
+
+2022-12-14 11:05:36.220  INFO 10930 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : receivedBody is [B@63be61e
+2022-12-14 11:05:36.226  INFO 10930 --- [0 - timer://foo] http2start                               : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:36.230  INFO 10930 --- [0 - timer://foo] route4                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:36.231  INFO 10930 --- [0 - timer://foo] route4                                   : Message headers in grpc: {CamelMessageTimestamp=1670987136230, firedTime=Wed Dec 14 11:05:36 HKT 2022}
+2022-12-14 11:05:36.231  INFO 10930 --- [0 - timer://foo] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: String, Body: name: "Camel"city: "London"]
+2022-12-14 11:05:36.234  INFO 10930 --- [0.0:9500/middle] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: byte[], Body: Date: Wed, 14 Dec 2022 11:05:36 +0800 (HKT)Message-ID: <781572629.7.1670987136234@debian>MIME-Version: 1.0Content-Type: multipart/mixed; 	boundary="----=_Part_6_1330653495.1670987136234"------=_Part_6_1330653495.1670987136234Content-Type: application/octet-streamContent-Transfer-Encoding: binaryname: "Camel"city: "London"------=_Part_6_1330653495.1670987136234--]
+2022-12-14 11:05:36.235  INFO 10930 --- [.0.0.0:8123/foo] http2end                                 : Message headers in ending grpc: {CamelMessageTimestamp=1670987136230, Date=Wed, 14 Dec 2022 11:05:36 +0800 (HKT), firedTime=Wed Dec 14 11:05:36 HKT 2022}
+2022-12-14 11:05:36.235  INFO 10930 --- [0.0:9500/middle] route5                                   : Message body back multipart: Date: Wed, 14 Dec 2022 11:05:36 +0800 (HKT)
+Message-ID: <781572629.7.1670987136234@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_6_1330653495.1670987136234"
+
+------=_Part_6_1330653495.1670987136234
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_6_1330653495.1670987136234--
+
+2022-12-14 11:05:36.236  INFO 10930 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in grpc content: "Date: Wed, 14 Dec 2022 11:05:36 +0800 (HKT)\r\nMessage-ID: <1688653759.3.1670987136215@debian>\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; \r\n\tboundary=\"----=_Part_2_1578872455.1670987136215\"\r\n\r\n------=_Part_2_1578872455.1670987136215\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nname: \"Camel\"\ncity: \"London\"\n\r\n------=_Part_2_1578872455.1670987136215--\r\n"
+
+2022-12-14 11:05:36.243  INFO 10930 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:36.244  INFO 10930 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in multipart Date: Wed, 14 Dec 2022 11:05:36 +0800 (HKT)
+Message-ID: <1688653759.3.1670987136215@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_1578872455.1670987136215"
+
+------=_Part_2_1578872455.1670987136215
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_1578872455.1670987136215--
+
+2022-12-14 11:05:36.245  INFO 10930 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Testing done: test2MiddleRoute (org.apache.camel.example.springboot.grpc.SimpleHttp2Test)
+2022-12-14 11:05:36.245  INFO 10930 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received Name is Camel
+2022-12-14 11:05:36.246  INFO 10930 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received City is London
+2022-12-14 11:05:36.246  INFO 10930 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Took: 2s416ms (2416 millis)
+2022-12-14 11:05:36.256  INFO 10930 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:36.256  INFO 10930 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener after: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test2MiddleRoute
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.499 s - in org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+2022-12-14 11:05:36.298  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutting down (timeout:10s)
+2022-12-14 11:05:41.253  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (total:13 stopped:13)
+2022-12-14 11:05:41.254  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start (timer://foo)
+2022-12-14 11:05:41.254  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:41.255  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route4 (timer://foo)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route3 (timer://foo)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route1 (file://files/input)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start0 (timer://foo)
+2022-12-14 11:05:41.256  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:41.258  INFO 10930 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutdown in 4s960ms (uptime:6s523ms)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  11.793 s
+[[1;34mINFO[m] Finished at: 2022-12-14T11:05:41+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.bitness: 64
+[[1;34mINFO[m] os.detected.version: 5.19
+[[1;34mINFO[m] os.detected.version.major: 5
+[[1;34mINFO[m] os.detected.version.minor: 19
+[[1;34mINFO[m] os.detected.release: debian
+[[1;34mINFO[m] os.detected.release.version: 11
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.apache.camel.springboot.example:camel-example-hello-grpc-test[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding Camel SB Examples :: gRPC :: Hello Camel Client 3.16.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-custom[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcamel-package-maven-plugin:3.16.0:prepare-example[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:compile[m [1m(default-compile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:testCompile[m [1m(default-testCompile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+11:05:45.070 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:05:45.075 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:05:45.097 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:05:45.125 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test], using SpringBootContextLoader
+11:05:45.129 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2Test-context.xml] does not exist
+11:05:45.133 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2TestContext.groovy] does not exist
+11:05:45.133 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:05:45.133 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: SimpleHttp2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:05:45.193 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]
+11:05:45.240 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/target/classes/org/apache/camel/example/springboot/grpc/Application.class]
+11:05:45.244 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.apache.camel.example.springboot.grpc.Application for test class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:45.299 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Merging default listeners with listeners configured via @TestExecutionListeners for class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test].
+11:05:45.299 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
+11:05:45.315 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+11:05:45.320 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.apache.camel.test.spring.junit5.CamelSpringTestContextLoaderTestExecutionListener@4ce7fffa, org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener@497486b3, org.apache.camel.test.spring.junit5.StopWatchTestExecutionListener@63f8276e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75f95314, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6127a7e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6bbe2511, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@495fac5f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76012793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@635572a7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79d94571, org.springframework.test.context.event.EventPublishingTestExecutionListener@4dd02341, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3212a8d7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a1a3478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@495b0487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@55dfcc6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@222eb8aa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@93cf163]
+11:05:45.347 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@260e86a1 testClass = SimpleHttp2Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@19648c40 testClass = SimpleHttp2Test, locations = '{}', classes = '{class org.apache.camel.example.springboot.grpc.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@14fc5f04, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6a8658ff, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@821330f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f0f2942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2d0399f4, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2df32bf7], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+11:05:45.358 [main] INFO org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener - CamelSpringBootExecutionListener preparing: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:45.360 [main] INFO org.apache.camel.test.spring.junit5.CamelAnnotationsHandler - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.4)
+
+2022-12-14 11:05:45.581  INFO 11047 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Starting SimpleHttp2Test using Java 17.0.4 on debian with PID 11047 (started by root in /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test)
+2022-12-14 11:05:45.582  INFO 11047 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : No active profile set, falling back to 1 default profile: "default"
+2022-12-14 11:05:47.225  INFO 11047 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Started SimpleHttp2Test in 1.85 seconds (JVM running for 2.716)
+2022-12-14 11:05:47.230  INFO 11047 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Setting shutdown timeout to [10 SECONDS] on CamelContext with name [camelContext].
+2022-12-14 11:05:47.308  INFO 11047 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener before: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test3EndRoute
+2022-12-14 11:05:47.309  INFO 11047 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : Initialized CamelSpringBootExecutionListener now ready to start CamelContext
+2022-12-14 11:05:47.309  INFO 11047 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2022-12-14 11:05:48.000  INFO 11047 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [To[mock:end]] --> after [To[mock://end]]
+2022-12-14 11:05:48.002  INFO 11047 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2end)[From[seda:netty-http:http://0.0.0.0:8123/foo] -> [Unmarshal[org.apache.camel.model.dataformat.MimeMultipartDataFormat@3b2c8bda], Log[Message headers in ending grpc: ${headers}], To[mock:end], To[mock://end]]]
+2022-12-14 11:05:48.006  INFO 11047 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2end">
+    <from uri="seda:netty-http:http://0.0.0.0:8123/foo"/>
+    <unmarshal allowNullBody="false">
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </unmarshal>
+    <log message="Message headers in ending grpc: ${headers}"/>
+    <to uri="mock:end"/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2end">
+    <from uri="seda:netty-http:http://0.0.0.0:8123/foo"/>
+    <unmarshal allowNullBody="false">
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </unmarshal>
+    <log message="Message headers in ending grpc: ${headers}"/>
+    <to uri="mock:end"/>
+    <to uri="mock://end"/>
+</route>
+2022-12-14 11:05:48.207  INFO 11047 --- [           main] o.a.camel.component.file.FileEndpoint    : Endpoint is configured with noop=true so forcing endpoint to be idempotent as well
+2022-12-14 11:05:48.207  INFO 11047 --- [           main] o.a.camel.component.file.FileEndpoint    : Using default memory based idempotent repository with cache max size: 1000
+2022-12-14 11:05:48.210  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) is starting
+2022-12-14 11:05:48.218  INFO 11047 --- [           main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running
+2022-12-14 11:05:48.221  INFO 11047 --- [inRunController] org.apache.camel.main.MainSupport        : Apache Camel (Main) 3.16.0 is starting
+2022-12-14 11:05:48.242  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:13 started:13)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start0 (timer://foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route1 (file://files/input)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route3 (timer://foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route4 (timer://foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start (timer://foo)
+2022-12-14 11:05:48.243  INFO 11047 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) started in 323ms (build:90ms init:200ms start:33ms)
+2022-12-14 11:05:48.246  INFO 11047 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://end is satisfied
+2022-12-14 11:05:49.339  INFO 11047 --- [0 - timer://foo] http2start0                              : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:49.586  INFO 11047 --- [0 - timer://foo] http2start0                              : Message body after grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:49.588  INFO 11047 --- [0 - timer://foo] route3                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:49.597  INFO 11047 --- [.0:19500/middle] http2middle0                             : Message body after multipart: Date: Wed, 14 Dec 2022 11:05:49 +0800 (HKT)
+Message-ID: <137257752.3.1670987149597@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_1588195811.1670987149597"
+
+------=_Part_2_1588195811.1670987149597
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_1588195811.1670987149597--
+
+2022-12-14 11:05:49.600  INFO 11047 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : receivedBody is [B@6f5ba7f1
+2022-12-14 11:05:49.602  INFO 11047 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in grpc content: "Date: Wed, 14 Dec 2022 11:05:49 +0800 (HKT)\r\nMessage-ID: <137257752.3.1670987149597@debian>\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; \r\n\tboundary=\"----=_Part_2_1588195811.1670987149597\"\r\n\r\n------=_Part_2_1588195811.1670987149597\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nname: \"Camel\"\ncity: \"London\"\n\r\n------=_Part_2_1588195811.1670987149597--\r\n"
+
+2022-12-14 11:05:49.603  INFO 11047 --- [0 - timer://foo] http2start                               : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:49.608  INFO 11047 --- [0 - timer://foo] route4                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:05:49.609  INFO 11047 --- [0 - timer://foo] route4                                   : Message headers in grpc: {CamelMessageTimestamp=1670987149608, firedTime=Wed Dec 14 11:05:49 HKT 2022}
+2022-12-14 11:05:49.609  INFO 11047 --- [0 - timer://foo] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: String, Body: name: "Camel"city: "London"]
+2022-12-14 11:05:49.611  INFO 11047 --- [0.0:9500/middle] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: byte[], Body: Date: Wed, 14 Dec 2022 11:05:49 +0800 (HKT)Message-ID: <1871549822.6.1670987149611@debian>MIME-Version: 1.0Content-Type: multipart/mixed; 	boundary="----=_Part_5_1249985774.1670987149611"------=_Part_5_1249985774.1670987149611Content-Type: application/octet-streamContent-Transfer-Encoding: binaryname: "Camel"city: "London"------=_Part_5_1249985774.1670987149611--]
+2022-12-14 11:05:49.611  INFO 11047 --- [0.0:9500/middle] route5                                   : Message body back multipart: Date: Wed, 14 Dec 2022 11:05:49 +0800 (HKT)
+Message-ID: <1871549822.6.1670987149611@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_5_1249985774.1670987149611"
+
+------=_Part_5_1249985774.1670987149611
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_5_1249985774.1670987149611--
+
+2022-12-14 11:05:49.612  INFO 11047 --- [.0.0.0:8123/foo] http2end                                 : Message headers in ending grpc: {CamelMessageTimestamp=1670987149608, Date=Wed, 14 Dec 2022 11:05:49 +0800 (HKT), firedTime=Wed Dec 14 11:05:49 HKT 2022}
+2022-12-14 11:05:49.617  INFO 11047 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:49.623  INFO 11047 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Testing done: test3EndRoute (org.apache.camel.example.springboot.grpc.SimpleHttp2Test)
+2022-12-14 11:05:49.623  INFO 11047 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Took: 2s307ms (2307 millis)
+2022-12-14 11:05:49.624  INFO 11047 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:05:49.624  INFO 11047 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener after: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test3EndRoute
+2022-12-14 11:05:49.628  INFO 11047 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in multipart Date: Wed, 14 Dec 2022 11:05:49 +0800 (HKT)
+Message-ID: <137257752.3.1670987149597@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_1588195811.1670987149597"
+
+------=_Part_2_1588195811.1670987149597
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_1588195811.1670987149597--
+
+2022-12-14 11:05:49.628  INFO 11047 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received Name is Camel
+2022-12-14 11:05:49.628  INFO 11047 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received City is London
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.631 s - in org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+2022-12-14 11:05:49.678  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutting down (timeout:10s)
+2022-12-14 11:05:54.636  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (total:13 stopped:13)
+2022-12-14 11:05:54.636  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start (timer://foo)
+2022-12-14 11:05:54.637  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:05:54.640  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route4 (timer://foo)
+2022-12-14 11:05:54.641  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route3 (timer://foo)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route1 (file://files/input)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:05:54.642  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start0 (timer://foo)
+2022-12-14 11:05:54.643  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:05:54.646  INFO 11047 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutdown in 4s968ms (uptime:6s436ms)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  12.600 s
+[[1;34mINFO[m] Finished at: 2022-12-14T11:05:54+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.bitness: 64
+[[1;34mINFO[m] os.detected.version: 5.19
+[[1;34mINFO[m] os.detected.version.major: 5
+[[1;34mINFO[m] os.detected.version.minor: 19
+[[1;34mINFO[m] os.detected.release: debian
+[[1;34mINFO[m] os.detected.release.version: 11
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.apache.camel.springboot.example:camel-example-hello-grpc-test[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding Camel SB Examples :: gRPC :: Hello Camel Client 3.16.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-custom[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcamel-package-maven-plugin:3.16.0:prepare-example[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:compile[m [1m(default-compile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:testCompile[m [1m(default-testCompile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+11:05:57.807 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:05:57.813 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:05:57.843 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:05:57.852 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test], using SpringBootContextLoader
+11:05:57.856 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2Test-context.xml] does not exist
+11:05:57.857 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2TestContext.groovy] does not exist
+11:05:57.858 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:05:57.858 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: SimpleHttp2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:05:57.884 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]
+11:05:57.913 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/target/classes/org/apache/camel/example/springboot/grpc/Application.class]
+11:05:57.926 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.apache.camel.example.springboot.grpc.Application for test class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:57.981 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Merging default listeners with listeners configured via @TestExecutionListeners for class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test].
+11:05:57.982 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
+11:05:57.986 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+11:05:57.990 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.apache.camel.test.spring.junit5.CamelSpringTestContextLoaderTestExecutionListener@4ce7fffa, org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener@497486b3, org.apache.camel.test.spring.junit5.StopWatchTestExecutionListener@63f8276e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75f95314, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6127a7e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6bbe2511, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@495fac5f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76012793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@635572a7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79d94571, org.springframework.test.context.event.EventPublishingTestExecutionListener@4dd02341, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3212a8d7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a1a3478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@495b0487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@55dfcc6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@222eb8aa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@93cf163]
+11:05:58.006 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@260e86a1 testClass = SimpleHttp2Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@19648c40 testClass = SimpleHttp2Test, locations = '{}', classes = '{class org.apache.camel.example.springboot.grpc.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@14fc5f04, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6a8658ff, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@821330f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f0f2942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2d0399f4, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2df32bf7], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+11:05:58.014 [main] INFO org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener - CamelSpringBootExecutionListener preparing: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:05:58.016 [main] INFO org.apache.camel.test.spring.junit5.CamelAnnotationsHandler - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.4)
+
+2022-12-14 11:05:58.148  INFO 11169 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Starting SimpleHttp2Test using Java 17.0.4 on debian with PID 11169 (started by root in /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test)
+2022-12-14 11:05:58.149  INFO 11169 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : No active profile set, falling back to 1 default profile: "default"
+2022-12-14 11:05:59.268  INFO 11169 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Started SimpleHttp2Test in 1.241 seconds (JVM running for 1.854)
+2022-12-14 11:05:59.272  INFO 11169 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Setting shutdown timeout to [10 SECONDS] on CamelContext with name [camelContext].
+2022-12-14 11:05:59.328  INFO 11169 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener before: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test4EndGrpcRoute
+2022-12-14 11:05:59.329  INFO 11169 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : Initialized CamelSpringBootExecutionListener now ready to start CamelContext
+2022-12-14 11:05:59.329  INFO 11169 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2022-12-14 11:05:59.874  INFO 11169 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [process[Processor@0x7fd2a67a]] --> after [To[mock://endgrpc]]
+2022-12-14 11:05:59.876  INFO 11169 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(http2endGrpc)[From[seda:netty-http:http://0.0.0.0:18124/foo] -> [process[Processor@0x7fd2a67a], To[mock://endgrpc]]]
+2022-12-14 11:05:59.879  INFO 11169 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2endGrpc">
+    <from uri="seda:netty-http:http://0.0.0.0:18124/foo"/>
+    <process/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="http2endGrpc">
+    <from uri="seda:netty-http:http://0.0.0.0:18124/foo"/>
+    <process/>
+    <to uri="mock://endgrpc"/>
+</route>
+2022-12-14 11:06:00.060  INFO 11169 --- [           main] o.a.camel.component.file.FileEndpoint    : Endpoint is configured with noop=true so forcing endpoint to be idempotent as well
+2022-12-14 11:06:00.061  INFO 11169 --- [           main] o.a.camel.component.file.FileEndpoint    : Using default memory based idempotent repository with cache max size: 1000
+2022-12-14 11:06:00.063  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) is starting
+2022-12-14 11:06:00.070  INFO 11169 --- [           main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running
+2022-12-14 11:06:00.075  INFO 11169 --- [inRunController] org.apache.camel.main.MainSupport        : Apache Camel (Main) 3.16.0 is starting
+2022-12-14 11:06:00.095  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:13 started:13)
+2022-12-14 11:06:00.096  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:06:00.096  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start0 (timer://foo)
+2022-12-14 11:06:00.096  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:06:00.096  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:06:00.097  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route1 (file://files/input)
+2022-12-14 11:06:00.097  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:06:00.098  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:06:00.098  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route3 (timer://foo)
+2022-12-14 11:06:00.098  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:06:00.098  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route4 (timer://foo)
+2022-12-14 11:06:00.098  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:06:00.099  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:06:00.099  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start (timer://foo)
+2022-12-14 11:06:00.099  INFO 11169 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) started in 293ms (build:75ms init:182ms start:36ms)
+2022-12-14 11:06:00.100  INFO 11169 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://endgrpc is satisfied
+2022-12-14 11:06:01.209  INFO 11169 --- [0 - timer://foo] http2start0                              : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:01.459  INFO 11169 --- [0 - timer://foo] http2start0                              : Message body after grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:01.460  INFO 11169 --- [0 - timer://foo] route3                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:01.464  INFO 11169 --- [.0:19500/middle] http2middle0                             : Message body after multipart: Date: Wed, 14 Dec 2022 11:06:01 +0800 (HKT)
+Message-ID: <257299262.3.1670987161464@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_394743119.1670987161463"
+
+------=_Part_2_394743119.1670987161463
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_394743119.1670987161463--
+
+2022-12-14 11:06:01.466  INFO 11169 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : receivedBody is [B@99c6884
+2022-12-14 11:06:01.468  INFO 11169 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in grpc content: "Date: Wed, 14 Dec 2022 11:06:01 +0800 (HKT)\r\nMessage-ID: <257299262.3.1670987161464@debian>\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; \r\n\tboundary=\"----=_Part_2_394743119.1670987161463\"\r\n\r\n------=_Part_2_394743119.1670987161463\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nname: \"Camel\"\ncity: \"London\"\n\r\n------=_Part_2_394743119.1670987161463--\r\n"
+
+2022-12-14 11:06:01.473  INFO 11169 --- [0 - timer://foo] http2start                               : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:01.479  INFO 11169 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in multipart Date: Wed, 14 Dec 2022 11:06:01 +0800 (HKT)
+Message-ID: <257299262.3.1670987161464@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_394743119.1670987161463"
+
+------=_Part_2_394743119.1670987161463
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_394743119.1670987161463--
+
+2022-12-14 11:06:01.479  INFO 11169 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received Name is Camel
+2022-12-14 11:06:01.479  INFO 11169 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received City is London
+2022-12-14 11:06:01.486  INFO 11169 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:06:01.486  INFO 11169 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Testing done: test4EndGrpcRoute (org.apache.camel.example.springboot.grpc.SimpleHttp2Test)
+2022-12-14 11:06:01.487  INFO 11169 --- [0 - timer://foo] route4                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:01.487  INFO 11169 --- [0 - timer://foo] route4                                   : Message headers in grpc: {CamelMessageTimestamp=1670987161487, firedTime=Wed Dec 14 11:06:01 HKT 2022}
+2022-12-14 11:06:01.488  INFO 11169 --- [0 - timer://foo] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: String, Body: name: "Camel"city: "London"]
+2022-12-14 11:06:01.490  INFO 11169 --- [0.0:9500/middle] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: byte[], Body: Date: Wed, 14 Dec 2022 11:06:01 +0800 (HKT)Message-ID: <1772048705.7.1670987161489@debian>MIME-Version: 1.0Content-Type: multipart/mixed; 	boundary="----=_Part_6_1404990546.1670987161489"------=_Part_6_1404990546.1670987161489Content-Type: application/octet-streamContent-Transfer-Encoding: binaryname: "Camel"city: "London"------=_Part_6_1404990546.1670987161489--]
+2022-12-14 11:06:01.490  INFO 11169 --- [0.0:9500/middle] route5                                   : Message body back multipart: Date: Wed, 14 Dec 2022 11:06:01 +0800 (HKT)
+Message-ID: <1772048705.7.1670987161489@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_6_1404990546.1670987161489"
+
+------=_Part_6_1404990546.1670987161489
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_6_1404990546.1670987161489--
+
+2022-12-14 11:06:01.490  INFO 11169 --- [.0.0.0:8123/foo] http2end                                 : Message headers in ending grpc: {CamelMessageTimestamp=1670987161487, Date=Wed, 14 Dec 2022 11:06:01 +0800 (HKT), firedTime=Wed Dec 14 11:06:01 HKT 2022}
+2022-12-14 11:06:01.492  INFO 11169 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Took: 2s157ms (2157 millis)
+2022-12-14 11:06:01.493  INFO 11169 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:06:01.493  INFO 11169 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener after: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test4EndGrpcRoute
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.739 s - in org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+2022-12-14 11:06:01.533  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutting down (timeout:10s)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (total:13 stopped:13)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start (timer://foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route4 (timer://foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route3 (timer://foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route1 (file://files/input)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start0 (timer://foo)
+2022-12-14 11:06:07.502  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:06:07.504  INFO 11169 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutdown in 5s971ms (uptime:7s441ms)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  12.057 s
+[[1;34mINFO[m] Finished at: 2022-12-14T11:06:07+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.bitness: 64
+[[1;34mINFO[m] os.detected.version: 5.19
+[[1;34mINFO[m] os.detected.version.major: 5
+[[1;34mINFO[m] os.detected.version.minor: 19
+[[1;34mINFO[m] os.detected.release: debian
+[[1;34mINFO[m] os.detected.release.version: 11
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.apache.camel.springboot.example:camel-example-hello-grpc-test[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding Camel SB Examples :: gRPC :: Hello Camel Client 3.16.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-custom[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Skipping compilation because target directory newer than sources.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcamel-package-maven-plugin:3.16.0:prepare-example[m [1m(default)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:compile[m [1m(default-compile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.0:testCompile[m [1m(default-testCompile)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mcamel-example-hello-grpc-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+11:06:11.081 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:06:11.088 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:06:11.108 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:06:11.116 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test], using SpringBootContextLoader
+11:06:11.119 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2Test-context.xml] does not exist
+11:06:11.120 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: class path resource [org/apache/camel/example/springboot/grpc/SimpleHttp2TestContext.groovy] does not exist
+11:06:11.120 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:06:11.121 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]: SimpleHttp2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:06:11.147 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test]
+11:06:11.177 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test/target/classes/org/apache/camel/example/springboot/grpc/Application.class]
+11:06:11.179 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.apache.camel.example.springboot.grpc.Application for test class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:06:11.219 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Merging default listeners with listeners configured via @TestExecutionListeners for class [org.apache.camel.example.springboot.grpc.SimpleHttp2Test].
+11:06:11.219 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
+11:06:11.223 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+11:06:11.227 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.apache.camel.test.spring.junit5.CamelSpringTestContextLoaderTestExecutionListener@4ce7fffa, org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener@497486b3, org.apache.camel.test.spring.junit5.StopWatchTestExecutionListener@63f8276e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75f95314, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6127a7e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6bbe2511, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@495fac5f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76012793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@635572a7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79d94571, org.springframework.test.context.event.EventPublishingTestExecutionListener@4dd02341, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3212a8d7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a1a3478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@495b0487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@55dfcc6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@222eb8aa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@93cf163]
+11:06:11.247 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@260e86a1 testClass = SimpleHttp2Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@19648c40 testClass = SimpleHttp2Test, locations = '{}', classes = '{class org.apache.camel.example.springboot.grpc.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@14fc5f04, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6a8658ff, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@821330f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f0f2942, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2d0399f4, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2df32bf7], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+11:06:11.253 [main] INFO org.apache.camel.test.spring.junit5.CamelSpringBootExecutionListener - CamelSpringBootExecutionListener preparing: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test
+11:06:11.254 [main] INFO org.apache.camel.test.spring.junit5.CamelAnnotationsHandler - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.4)
+
+2022-12-14 11:06:11.419  INFO 11283 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Starting SimpleHttp2Test using Java 17.0.4 on debian with PID 11283 (started by root in /home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-test)
+2022-12-14 11:06:11.420  INFO 11283 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : No active profile set, falling back to 1 default profile: "default"
+2022-12-14 11:06:12.828  INFO 11283 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Started SimpleHttp2Test in 1.551 seconds (JVM running for 2.169)
+2022-12-14 11:06:12.842  INFO 11283 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Setting shutdown timeout to [10 SECONDS] on CamelContext with name [camelContext].
+2022-12-14 11:06:12.945  INFO 11283 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener before: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test5FileRoute
+2022-12-14 11:06:12.945  INFO 11283 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : Initialized CamelSpringBootExecutionListener now ready to start CamelContext
+2022-12-14 11:06:12.946  INFO 11283 --- [           main] o.a.c.t.s.j.CamelAnnotationsHandler      : Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2022-12-14 11:06:13.557  INFO 11283 --- [           main] o.apache.camel.builder.AdviceWithTasks   : AdviceWith (*) : [To[file:files/output]] --> after [To[mock://fileEnd]]
+2022-12-14 11:06:13.558  INFO 11283 --- [           main] org.apache.camel.builder.AdviceWith      : AdviceWith route after: Route(httpFIleRoute)[From[seda:netty-http:http://0.0.0.0:8323/foo] -> [Unmarshal[org.apache.camel.model.dataformat.MimeMultipartDataFormat@3b2c8bda], To[file:files/output], To[mock://fileEnd]]]
+2022-12-14 11:06:13.560  INFO 11283 --- [           main] org.apache.camel.builder.AdviceWith      : Adviced route before/after as XML:
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="httpFIleRoute">
+    <from uri="seda:netty-http:http://0.0.0.0:8323/foo"/>
+    <unmarshal allowNullBody="false">
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </unmarshal>
+    <to uri="file:files/output"/>
+</route>
+
+<route xmlns="http://camel.apache.org/schema/spring" customId="true" id="httpFIleRoute">
+    <from uri="seda:netty-http:http://0.0.0.0:8323/foo"/>
+    <unmarshal allowNullBody="false">
+        <mimeMultipart binaryContent="true" headersInline="true" includeHeaders="(included|x-.*)" multipartSubType="mixed" multipartWithoutAttachment="true"/>
+    </unmarshal>
+    <to uri="file:files/output"/>
+    <to uri="mock://fileEnd"/>
+</route>
+2022-12-14 11:06:13.713  INFO 11283 --- [           main] o.a.camel.component.file.FileEndpoint    : Endpoint is configured with noop=true so forcing endpoint to be idempotent as well
+2022-12-14 11:06:13.713  INFO 11283 --- [           main] o.a.camel.component.file.FileEndpoint    : Using default memory based idempotent repository with cache max size: 1000
+2022-12-14 11:06:13.714  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) is starting
+2022-12-14 11:06:13.721  INFO 11283 --- [           main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running
+2022-12-14 11:06:13.726  INFO 11283 --- [inRunController] org.apache.camel.main.MainSupport        : Apache Camel (Main) 3.16.0 is starting
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:13 started:13)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start0 (timer://foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route1 (file://files/input)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route3 (timer://foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route4 (timer://foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started http2start (timer://foo)
+2022-12-14 11:06:13.741  INFO 11283 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) started in 286ms (build:106ms init:154ms start:26ms)
+2022-12-14 11:06:13.743  INFO 11283 --- [           main] o.a.camel.component.mock.MockEndpoint    : Asserting: mock://fileEnd is satisfied
+2022-12-14 11:06:14.830  INFO 11283 --- [0 - timer://foo] http2start0                              : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:15.091  INFO 11283 --- [0 - timer://foo] http2start0                              : Message body after grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:15.098  INFO 11283 --- [0 - timer://foo] route3                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:15.103  INFO 11283 --- [.0:19500/middle] http2middle0                             : Message body after multipart: Date: Wed, 14 Dec 2022 11:06:15 +0800 (HKT)
+Message-ID: <1098290544.3.1670987175103@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_1544606154.1670987175103"
+
+------=_Part_2_1544606154.1670987175103
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_1544606154.1670987175103--
+
+2022-12-14 11:06:15.111  INFO 11283 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : receivedBody is [B@1e8570ae
+2022-12-14 11:06:15.113  INFO 11283 --- [0.0.0:18123/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in grpc content: "Date: Wed, 14 Dec 2022 11:06:15 +0800 (HKT)\r\nMessage-ID: <1098290544.3.1670987175103@debian>\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; \r\n\tboundary=\"----=_Part_2_1544606154.1670987175103\"\r\n\r\n------=_Part_2_1544606154.1670987175103\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nname: \"Camel\"\ncity: \"London\"\n\r\n------=_Part_2_1544606154.1670987175103--\r\n"
+
+2022-12-14 11:06:15.114  INFO 11283 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : Message body back in multipart Date: Wed, 14 Dec 2022 11:06:15 +0800 (HKT)
+Message-ID: <1098290544.3.1670987175103@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_1544606154.1670987175103"
+
+------=_Part_2_1544606154.1670987175103
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_2_1544606154.1670987175103--
+
+2022-12-14 11:06:15.114  INFO 11283 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received Name is Camel
+2022-12-14 11:06:15.114  INFO 11283 --- [0.0.0:18124/foo] o.a.c.e.s.grpc.CamelHTTP2EndGrpc         : received City is London
+2022-12-14 11:06:15.118  INFO 11283 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:06:15.119  INFO 11283 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Testing done: test5FileRoute (org.apache.camel.example.springboot.grpc.SimpleHttp2Test)
+2022-12-14 11:06:15.119  INFO 11283 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : Took: 2s172ms (2172 millis)
+2022-12-14 11:06:15.119  INFO 11283 --- [           main] o.a.c.e.springboot.grpc.SimpleHttp2Test  : ********************************************************************************
+2022-12-14 11:06:15.119  INFO 11283 --- [           main] c.t.s.j.CamelSpringBootExecutionListener : CamelSpringBootExecutionListener after: class org.apache.camel.example.springboot.grpc.SimpleHttp2Test.test5FileRoute
+2022-12-14 11:06:15.124  INFO 11283 --- [0 - timer://foo] http2start                               : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:15.130  INFO 11283 --- [0 - timer://foo] route4                                   : Message body in grpc: name: "Camel"
+city: "London"
+
+2022-12-14 11:06:15.130  INFO 11283 --- [0 - timer://foo] route4                                   : Message headers in grpc: {CamelMessageTimestamp=1670987175130, firedTime=Wed Dec 14 11:06:15 HKT 2022}
+2022-12-14 11:06:15.131  INFO 11283 --- [0 - timer://foo] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: String, Body: name: "Camel"city: "London"]
+2022-12-14 11:06:15.133  INFO 11283 --- [0.0:9500/middle] org.apache.camel.example                 : Exchange[ExchangePattern: InOnly, BodyType: byte[], Body: Date: Wed, 14 Dec 2022 11:06:15 +0800 (HKT)Message-ID: <1780573663.7.1670987175133@debian>MIME-Version: 1.0Content-Type: multipart/mixed; 	boundary="----=_Part_6_411907963.1670987175133"------=_Part_6_411907963.1670987175133Content-Type: application/octet-streamContent-Transfer-Encoding: binaryname: "Camel"city: "London"------=_Part_6_411907963.1670987175133--]
+2022-12-14 11:06:15.134  INFO 11283 --- [0.0:9500/middle] route5                                   : Message body back multipart: Date: Wed, 14 Dec 2022 11:06:15 +0800 (HKT)
+Message-ID: <1780573663.7.1670987175133@debian>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_6_411907963.1670987175133"
+
+------=_Part_6_411907963.1670987175133
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+name: "Camel"
+city: "London"
+
+------=_Part_6_411907963.1670987175133--
+
+2022-12-14 11:06:15.134  INFO 11283 --- [.0.0.0:8123/foo] http2end                                 : Message headers in ending grpc: {CamelMessageTimestamp=1670987175130, Date=Wed, 14 Dec 2022 11:06:15 +0800 (HKT), firedTime=Wed Dec 14 11:06:15 HKT 2022}
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.101 s - in org.apache.camel.example.springboot.grpc.[1mSimpleHttp2Test[m
+2022-12-14 11:06:15.175  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutting down (timeout:10s)
+2022-12-14 11:06:20.130  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (total:13 stopped:13)
+2022-12-14 11:06:20.132  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start (timer://foo)
+2022-12-14 11:06:20.132  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end (seda://netty-http:http://0.0.0.0:8123/foo)
+2022-12-14 11:06:20.132  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route5 (seda://netty-http:http://0.0.0.0:9500/middle)
+2022-12-14 11:06:20.132  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route4 (timer://foo)
+2022-12-14 11:06:20.132  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle (seda://netty-http:http://0.0.0.0:9000/foo)
+2022-12-14 11:06:20.133  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route3 (timer://foo)
+2022-12-14 11:06:20.133  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route2 (seda://netty-http:http://0.0.0.0:9200/foo)
+2022-12-14 11:06:20.133  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped route1 (file://files/input)
+2022-12-14 11:06:20.133  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2endGrpc (seda://netty-http:http://0.0.0.0:18124/foo)
+2022-12-14 11:06:20.133  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2end0 (seda://netty-http:http://0.0.0.0:18123/foo)
+2022-12-14 11:06:20.133  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2middle0 (seda://grpc://0.0.0.0:19500/middle)
+2022-12-14 11:06:20.134  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped http2start0 (timer://foo)
+2022-12-14 11:06:20.134  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped httpFIleRoute (seda://netty-http:http://0.0.0.0:8323/foo)
+2022-12-14 11:06:20.137  INFO 11283 --- [ionShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.16.0 (gRPC) shutdown in 4s962ms (uptime:6s422ms)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  12.109 s
+[[1;34mINFO[m] Finished at: 2022-12-14T11:06:20+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
