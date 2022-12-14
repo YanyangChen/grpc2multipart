@@ -154,12 +154,9 @@ public class SimpleHttp2Test {
         mockRestfulEnd.expectedMinimumMessageCount(1);
 
         context.start();
-        template.sendBodyAndHeader("direct:mockStart", "testing", "me", "Donald Duck");
+        template.sendBodyAndHeader("direct:mockStart", "testing_body", "test", "Restful Header");
         mockRestfulStart.assertIsSatisfied();
         mockRestfulEnd.assertIsSatisfied();
-
-
-
     }
 
 
