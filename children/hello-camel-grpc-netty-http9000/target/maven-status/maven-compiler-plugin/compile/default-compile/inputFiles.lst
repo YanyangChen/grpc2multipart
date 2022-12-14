@@ -1,0 +1,8 @@
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/src/main/java/org/apache/camel/example/springboot/grpc/NettyRouteFP9000.java
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/target/generated-sources/protobuf/java/org/apache/camel/examples/CamelHelloReplyOrBuilder.java
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/target/generated-sources/protobuf/grpc-java/org/apache/camel/examples/CamelHelloGrpc.java
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/src/main/java/org/apache/camel/example/springboot/grpc/Application.java
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/target/generated-sources/protobuf/java/org/apache/camel/examples/CamelHelloRequestOrBuilder.java
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/target/generated-sources/protobuf/java/org/apache/camel/examples/CamelHelloRequest.java
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/target/generated-sources/protobuf/java/org/apache/camel/examples/HelloCamelProto.java
+/home/aaron/pccw/camel-grpc-example/camel-spring-boot-examples/grpc/hello-camel-grpc-netty-http9000/target/generated-sources/protobuf/java/org/apache/camel/examples/CamelHelloReply.java
