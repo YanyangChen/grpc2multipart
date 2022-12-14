@@ -8,6 +8,7 @@ public class CamelHTTP2FileTransfer extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("file:files/input?flatten=true&noop=true")
+                .routeId("httpFIleRoute")
                 //the simulation of netty-http does not support chunkedMaxContentLength option?
                 .to("seda:netty-http:http://0.0.0.0:9200/foo");//?chunkedMaxContentLength=20971520
 
@@ -17,9 +18,9 @@ public class CamelHTTP2FileTransfer extends RouteBuilder {
 
                 .to("seda:netty-http:http://0.0.0.0:8323/foo");
         from("seda:netty-http:http://0.0.0.0:8323/foo")
-                .routeId("httpFIleRoute")
+
                 .unmarshal()
-                .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-                .to("file:files/output");
+                .mimeMultipart("mixed", true, true, "(included|x-.*)", true);
+                //.to("file:files/output");
     }
 }

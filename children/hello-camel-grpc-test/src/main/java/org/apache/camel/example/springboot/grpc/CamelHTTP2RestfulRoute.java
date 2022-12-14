@@ -12,11 +12,11 @@ public class CamelHTTP2RestfulRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        restConfiguration().component("jetty").host("0.0.0.0").port(8080).bindingMode(RestBindingMode.json).enableCORS(true);
+        restConfiguration().component("servlet").host("0.0.0.0").port(8080).bindingMode(RestBindingMode.json).enableCORS(true);
         from("direct:start")
                 .to("rest:get:hello/{test}");
         from("rest:get:hello/{test}")
-                .transform().simple("Hi ${header.test}")
+                .transform().simple("Hi ${header.test} + ${body}")
                 .routeId("restStartRoute")
                 .log("Message body in rest: ${body}")
                 .log("Message headers in rest: ${headers}")

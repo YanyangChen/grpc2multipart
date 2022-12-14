@@ -61,7 +61,8 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                 //.to("log:org.apache.camel.example?level=INFO")
                 //.wireTap("mock:start")
                 .log("Message body after grpc: ${body}")
-                .wireTap("seda:grpc://0.0.0.0:19500/middle");
+                .wireTap("seda:grpc://0.0.0.0:19500/middle")
+                /*.to("mock:start")*/;
 
 
 
@@ -72,7 +73,8 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
                 //.to("log:org.apache.camel.example?level=INFO")
                 .log("Message body after multipart: ${body}")
-                .wireTap("seda:netty-http:http://0.0.0.0:18123/foo");
+                .wireTap("seda:netty-http:http://0.0.0.0:18123/foo")
+                /*.to("mock:middle")*/;
                 //.wireTap("mock:middle")
                 //.log("Message body back multipart: ${body}");
                // ;
@@ -87,8 +89,8 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                     log.info("Message body back in grpc " + exchange.getIn().getBody());
                 })
                 //.to("mock:end")
-                .wireTap("seda:netty-http:http://0.0.0.0:18124/foo");
-                //.wireTap("mock:end");
+                .wireTap("seda:netty-http:http://0.0.0.0:18124/foo")
+                /*.to("mock:end")*/;
 
         from("seda:netty-http:http://0.0.0.0:18124/foo")
                 .routeId("http2endGrpc")
@@ -107,10 +109,10 @@ public class CamelHTTP2EndGrpc extends RouteBuilder {
                     log.info("received City is " + city);
                     CamelHelloRequest requestEnd = CamelHelloRequest.newBuilder().setName(name).setCity(city).build();
                     exchange.getIn().setBody(requestEnd, CamelHelloRequest.class);
-                });
+                })
 
                 //.log("Message body back in grpc: ${body}")
-                //.to("mock:endgrpc");
+                /*.to("mock:endgrpc")*/;
                 //.to("seda:netty-http:http://0.0.0.0:8124/foo");
 
     }

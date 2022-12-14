@@ -34,15 +34,17 @@ public class SimpleHttp2Test {
     @Autowired
     CamelContext context;
 
-
     @EndpointInject("mock:start")
     protected MockEndpoint mockStartpoint;
 
     @EndpointInject("mock:middle")
     protected MockEndpoint mockMiddlepoint;
 
-    @EndpointInject("mock://end")
+    @EndpointInject("mock:end")
     protected MockEndpoint mockEnd;
+
+    @EndpointInject("mock:ends")
+    protected MockEndpoint mockEnds;
 
     @EndpointInject("mock:restfulEnd")
     protected MockEndpoint mockRestfulEnd;
@@ -133,38 +135,15 @@ public class SimpleHttp2Test {
 
     }
 
-    @Test
-    public void test6RestFulEndRoute() throws Exception{
-        //CamelContext camelcontext = new DefaultCamelContext();
-        //ProducerTemplate template = context.createProducerTemplate();
 
-        System.out.println("template.sendBodyAndHeader is "+template);
-        AdviceWith.adviceWith(context, "restStartRoute", routeBuilder ->{
-            routeBuilder.replaceFromWith("direct:mockStart");
-            routeBuilder.weaveAddLast().to(mockRestfulStart);
-
-        });
-       // mockRestfulStart.expectedMinimumMessageCount(1);
-
-        AdviceWith.adviceWith(context, "http2restfulEnd", routeBuilder ->{
-            //routeBuilder.replaceFromWith("direct:mockStart");
-            routeBuilder.weaveAddLast().to(mockRestfulEnd);
-
-        });
-        mockRestfulEnd.expectedMinimumMessageCount(1);
-
-        context.start();
-        template.sendBodyAndHeader("direct:mockStart", "testing_body", "test", "Restful Header");
-        mockRestfulStart.assertIsSatisfied();
-        mockRestfulEnd.assertIsSatisfied();
-    }
 
 
 
 
 
     @Test
-    public void test4EndGrpcRoute() throws Exception {
+    @Order(4)
+    public void test4EndGrpcRoutePOC() throws Exception {
         AdviceWith.adviceWith(context, "http2endGrpc", routeBuilder ->{
             routeBuilder.weaveAddLast().to(mockEndGrpcPoint);
 
@@ -180,6 +159,7 @@ public class SimpleHttp2Test {
     }
 
     @Test
+    @Order(5)
     public void test5FileRoute() throws Exception {
         AdviceWith.adviceWith(context, "httpFIleRoute", routeBuilder ->{
             routeBuilder.weaveAddLast().to(mockFileEnd);
@@ -196,15 +176,17 @@ public class SimpleHttp2Test {
     }
 
     @Test
-    public void test0HTTP2Route() throws Exception{
+    @Order(7)
+    public void test0HTTP2RoutePOC() throws Exception{
 
 
         //mockEndpoint.expectedBodiesReceived(expectedBody);
         //String expectedBody = "Date: Fri, 9 Dec 2022 10:39:16 +0800 (HKT)\\r\\nMessage-ID: <1559701419.1.1670553556788@debian>\\r\\nMIME-Version: 1.0\\r\\nContent-Type: multipart/mixed; \\r\\n\\tboundary=\\\"----=_Part_0_1925413803.1670553556768\\\"\\r\\n\\r\\n------=_Part_0_1925413803.1670553556768\\r\\nContent-Type: application/octet-stream\\r\\nContent-Transfer-Encoding: binary\\r\\n\\r\\nname: \\\"Camel\\\"\\ncity: \\\"London\\\"\\n\\r\\n------=_Part_0_1925413803.1670553556768--\\r\\n";
 
 
-        AdviceWith.adviceWith(context, "http2start0", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockStartpoint);
+        AdviceWith.adviceWith(context, "http2starts", routeBuilder ->{
+            //routeBuilder.weaveAddLast().to(mockStartpoint);
+            routeBuilder.weaveByToUri("mock:start").replace().to(mockStartpoint);
 
         });
 
@@ -212,8 +194,8 @@ public class SimpleHttp2Test {
         mockStartpoint.expectedMinimumMessageCount(1);
 
 
-        AdviceWith.adviceWith(context, "http2middle0", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockMiddlepoint);
+        AdviceWith.adviceWith(context, "http2middles", routeBuilder ->{
+            routeBuilder.weaveByToUri("mock:middle").replace().to(mockMiddlepoint);
 
         });
 
@@ -224,8 +206,8 @@ public class SimpleHttp2Test {
         mockMiddlepoint.allMessages().body().convertTo(String.class).contains("London");
         mockMiddlepoint.expectedMinimumMessageCount(1);
 
-        AdviceWith.adviceWith(context, "http2end0", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockEnd);
+        AdviceWith.adviceWith(context, "http2ends", routeBuilder ->{
+            routeBuilder.weaveByToUri("mock:ends").replace().to(mockEnds);
 
         });
 
@@ -233,8 +215,8 @@ public class SimpleHttp2Test {
         mockEnd.expectedMinimumMessageCount(1);
 
 
-        AdviceWith.adviceWith(context, "http2endGrpc", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockEndGrpcPoint);
+        AdviceWith.adviceWith(context, "http2endGrpcs", routeBuilder ->{
+            routeBuilder.weaveByToUri("mock:endgrpc").replace().to(mockEndGrpcPoint);
 
         });
 
@@ -245,10 +227,37 @@ public class SimpleHttp2Test {
         context.start();
         mockStartpoint.assertIsSatisfied();
         mockMiddlepoint.assertIsSatisfied();
-        mockEnd.assertIsSatisfied();
+        mockEnds.assertIsSatisfied();
         mockEndGrpcPoint.assertIsSatisfied();
 
 
 
+    }
+
+    @Test
+    @Order(6)
+    public void test6RestFulEndRoute() throws Exception{
+        //CamelContext camelcontext = new DefaultCamelContext();
+        //ProducerTemplate template = context.createProducerTemplate();
+
+        System.out.println("template.sendBodyAndHeader is "+template);
+        AdviceWith.adviceWith(context, "restStartRoute", routeBuilder ->{
+            routeBuilder.replaceFromWith("direct:mockStart");
+            routeBuilder.weaveAddLast().to(mockRestfulStart);
+
+        });
+        // mockRestfulStart.expectedMinimumMessageCount(1);
+
+        AdviceWith.adviceWith(context, "http2restfulEnd", routeBuilder ->{
+            //routeBuilder.replaceFromWith("direct:mockStart");
+            routeBuilder.weaveAddLast().to(mockRestfulEnd);
+
+        });
+        mockRestfulEnd.expectedMinimumMessageCount(1);
+
+        context.start();
+        template.sendBodyAndHeader("direct:mockStart", "testing_body", "test", "Restful Header");
+        mockRestfulStart.assertIsSatisfied();
+        mockRestfulEnd.assertIsSatisfied();
     }
 }
