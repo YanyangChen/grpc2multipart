@@ -1,15 +1,13 @@
 package org.apache.camel.example.springboot.grpc;
 
 import io.netty.buffer.ByteBuf;
-import org.apache.camel.CamelContext;
-import org.apache.camel.EndpointInject;
-import org.apache.camel.Exchange;
-import org.apache.camel.StreamCache;
+import org.apache.camel.*;
 import org.apache.camel.builder.AdviceWith;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.converter.stream.InputStreamCache;
 import org.apache.camel.examples.CamelHelloRequest;
 import org.apache.camel.examples.MimeContentRequest;
+import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.model.dataformat.MimeMultipartDataFormat;
 import org.apache.camel.test.spring.junit5.CamelSpringBootTest;
 import org.apache.camel.test.spring.junit5.UseAdviceWith;
@@ -46,6 +44,12 @@ public class SimpleHttp2Test {
     @EndpointInject("mock://end")
     protected MockEndpoint mockEnd;
 
+    @EndpointInject("mock:restfulEnd")
+    protected MockEndpoint mockRestfulEnd;
+
+    @EndpointInject("mock:restfulStart")
+    protected MockEndpoint mockRestfulStart;
+
     @EndpointInject("mock:fileStart")
     protected MockEndpoint mockFileStart;
 
@@ -54,6 +58,9 @@ public class SimpleHttp2Test {
 
     @EndpointInject("mock:endgrpc")
     protected MockEndpoint mockEndGrpcPoint;
+
+    @Autowired
+    ProducerTemplate template;
 
     @Test
     @Order(1)
@@ -122,6 +129,35 @@ public class SimpleHttp2Test {
         context.start();
 
         mockEnd.assertIsSatisfied();
+
+
+    }
+
+    @Test
+    public void test6RestFulEndRoute() throws Exception{
+        //CamelContext camelcontext = new DefaultCamelContext();
+        //ProducerTemplate template = context.createProducerTemplate();
+
+        System.out.println("template.sendBodyAndHeader is "+template);
+        AdviceWith.adviceWith(context, "restStartRoute", routeBuilder ->{
+            routeBuilder.replaceFromWith("direct:mockStart");
+            routeBuilder.weaveAddLast().to(mockRestfulStart);
+
+        });
+       // mockRestfulStart.expectedMinimumMessageCount(1);
+
+        AdviceWith.adviceWith(context, "http2restfulEnd", routeBuilder ->{
+            //routeBuilder.replaceFromWith("direct:mockStart");
+            routeBuilder.weaveAddLast().to(mockRestfulEnd);
+
+        });
+        mockRestfulEnd.expectedMinimumMessageCount(1);
+
+        context.start();
+        template.sendBodyAndHeader("direct:mockStart", "testing", "me", "Donald Duck");
+        mockRestfulStart.assertIsSatisfied();
+        mockRestfulEnd.assertIsSatisfied();
+
 
 
     }

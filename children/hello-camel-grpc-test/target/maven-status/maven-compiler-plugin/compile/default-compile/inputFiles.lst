@@ -10,6 +10,7 @@
 /home/aaron/pccw/etax-grpc/grpc/children/hello-camel-grpc-test/target/generated-sources/protobuf/java/org/apache/camel/examples/MimeContentReplyOrBuilder.java
 /home/aaron/pccw/etax-grpc/grpc/children/hello-camel-grpc-test/src/main/java/org/apache/camel/example/springboot/grpc/Application.java
 /home/aaron/pccw/etax-grpc/grpc/children/hello-camel-grpc-test/target/generated-sources/protobuf/java/org/apache/camel/examples/MimeContentRequestOrBuilder.java
+/home/aaron/pccw/etax-grpc/grpc/children/hello-camel-grpc-test/src/main/java/org/apache/camel/example/springboot/grpc/CamelHTTP2RestfulRoute.java
 /home/aaron/pccw/etax-grpc/grpc/children/hello-camel-grpc-test/src/main/java/org/apache/camel/example/springboot/grpc/CamelHTTP2EndGrpc.java
 /home/aaron/pccw/etax-grpc/grpc/children/hello-camel-grpc-test/src/main/java/org/apache/camel/example/springboot/grpc/CamelHTTP2Middle.java
 /home/aaron/pccw/etax-grpc/grpc/children/hello-camel-grpc-test/target/generated-sources/protobuf/java/org/apache/camel/examples/CamelHelloRequestOrBuilder.java

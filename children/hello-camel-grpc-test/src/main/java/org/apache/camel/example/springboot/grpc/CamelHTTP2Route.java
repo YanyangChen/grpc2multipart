@@ -30,7 +30,7 @@ import org.springframework.stereotype.Component;
 /**
  * A simple Camel gRPC route example using Spring-boot
  */
-@Component
+//@Component
 public class CamelHTTP2Route extends RouteBuilder {
 
 
@@ -61,6 +61,7 @@ public class CamelHTTP2Route extends RouteBuilder {
                 //.setExchangePattern(ExchangePattern.InOut)
                 //.to("netty-http:http://0.0.0.0:9000/foo");
                 .convertBodyTo(String.class)
+
                 .to("log:org.apache.camel.example?level=INFO")
                 .to("seda:netty-http:http://0.0.0.0:9500/middle");
                // .to("mock:start");
