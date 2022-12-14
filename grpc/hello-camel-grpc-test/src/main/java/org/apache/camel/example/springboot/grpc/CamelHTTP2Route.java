@@ -54,11 +54,13 @@ public class CamelHTTP2Route extends RouteBuilder {
 
         })
                 .log("Message body in grpc: ${body}")
-                .to("activemq:my-activemq-grpc")
-                .convertBodyTo(String.class)
+                .log("Message headers in grpc: ${headers}")
+                //.to("activemq:my-activemq-grpc")
+               //.convertBodyTo(String.class)
 
-                .setExchangePattern(ExchangePattern.InOut)
+                //.setExchangePattern(ExchangePattern.InOut)
                 //.to("netty-http:http://0.0.0.0:9000/foo");
+                .convertBodyTo(String.class)
                 .to("log:org.apache.camel.example?level=INFO")
                 .to("seda:netty-http:http://0.0.0.0:9500/middle");
                // .to("mock:start");
@@ -92,7 +94,7 @@ public class CamelHTTP2Route extends RouteBuilder {
 
                 // .convertBodyTo(String.class)
 
-
+                .log("Message headers in ending grpc: ${headers}")
 
                 .to("mock:end");
 

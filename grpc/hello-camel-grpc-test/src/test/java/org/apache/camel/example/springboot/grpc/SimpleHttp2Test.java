@@ -46,6 +46,12 @@ public class SimpleHttp2Test {
     @EndpointInject("mock://end")
     protected MockEndpoint mockEnd;
 
+    @EndpointInject("mock:fileStart")
+    protected MockEndpoint mockFileStart;
+
+    @EndpointInject("mock:fileEnd")
+    protected MockEndpoint mockFileEnd;
+
     @EndpointInject("mock:endgrpc")
     protected MockEndpoint mockEndGrpcPoint;
 
@@ -141,6 +147,22 @@ public class SimpleHttp2Test {
     }
 
     @Test
+    public void test5FileRoute() throws Exception {
+        AdviceWith.adviceWith(context, "httpFIleRoute", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockFileEnd);
+
+        });
+
+        //mockEndGrpcPoint.allMessages().body().isInstanceOf(CamelHelloRequest.class);
+        mockFileEnd.expectedMinimumMessageCount(1);
+
+
+
+        context.start();
+        mockFileEnd.assertIsSatisfied();
+    }
+
+    @Test
     public void test0HTTP2Route() throws Exception{
 
 
@@ -174,7 +196,7 @@ public class SimpleHttp2Test {
 
         });
 
-        mockEnd.allMessages().body().isInstanceOf(MimeContentRequest.class);
+        //mockEnd.allMessages().body().isInstanceOf(MimeContentRequest.class);
         mockEnd.expectedMinimumMessageCount(1);
 
 
