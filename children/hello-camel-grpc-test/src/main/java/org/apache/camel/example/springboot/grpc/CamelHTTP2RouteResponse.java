@@ -31,7 +31,7 @@ import org.springframework.stereotype.Component;
  * A simple Camel gRPC route example using Spring-boot
  */
 @Component
-public class CamelHTTP2Route extends RouteBuilder {
+public class CamelHTTP2RouteResponse extends RouteBuilder {
 
 
     @Override
@@ -57,44 +57,43 @@ public class CamelHTTP2Route extends RouteBuilder {
                 .convertBodyTo(String.class)
 
                 .to("log:org.apache.camel.example?level=INFO")
-                .to("seda:netty-http:http://0.0.0.0:9500/middle");
+                .to("seda:netty-http:http://0.0.0.0:29500/middle");
                // .to("mock:start");
 
-
-        from("seda:netty-http:http://0.0.0.0:9500/middle")
+        // middle marshaling gateways for request
+        from("seda:netty-http:http://0.0.0.0:29500/middle")
 
                 .marshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
                 .to("log:org.apache.camel.example?level=INFO")
-                .to("seda:netty-http:http://0.0.0.0:8123/foo")
+                .to("seda:netty-http:http://0.0.0.0:28123/foo")
                 .log("Message body back multipart: ${body}");
                // .to("mock:middle");
-
-        from("seda:netty-http:http://0.0.0.0:8123/foo")
-                .routeId("http2end")
+            // assume a load balancer here
+        from("seda:netty-http:http://0.0.0.0:28123/foo")
+                .routeId("http2endResponse")
                 .unmarshal()
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
 
                 // .convertBodyTo(String.class)
 
                 .log("Message headers in ending grpc: ${headers}")
-                .to("direct:end")
-/*
+        // middle marshaling gateways for request ends here
+                .to("direct:endback");
 
-            from("direct:end")
-                    .to("seda:netty-http:http://0.0.0.0:8123/fooback");
+            from("direct:endback")
+                    .to("seda:netty-http:http://0.0.0.0:28123/fooback");
             // middle marshaling gateways for response
-            from("seda:netty-http:http://0.0.0.0:8123/fooback")
+            from("seda:netty-http:http://0.0.0.0:28123/fooback")
                     .marshal()
                     .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-                    .to("seda:netty-http:http://0.0.0.0:9500/middleback");
+                    .to("seda:netty-http:http://0.0.0.0:29500/middleback");
                 //assume a load balancer(HTTP1.1) is here
-            from("seda:netty-http:http://0.0.0.0:9500/middleback")
-
+            from("seda:netty-http:http://0.0.0.0:29500/middleback")
+                   
                     .unmarshal()
                     .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-*/
-
+            // middle marshaling gateways for response ends here
                 .to("mock:end");
 
     }

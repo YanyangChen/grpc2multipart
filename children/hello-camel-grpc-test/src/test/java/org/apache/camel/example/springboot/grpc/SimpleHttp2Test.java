@@ -121,17 +121,30 @@ public class SimpleHttp2Test {
 
         });
 
-//        mockEnd.allMessages().body().isInstanceOf(CamelHelloRequest.class);
         mockEnd.allMessages().body().convertTo(String.class).contains("name: \"Camel\"\n" +"city: \"London\"");
-        //mockEnd.allMessages().body().convertTo(String.class).contains("city");
-        //mockEnd.allMessages().body().convertTo(String.class).contains("Camel");
-        //mockEnd.allMessages().body().convertTo(String.class).contains("London");
         mockEnd.expectedMinimumMessageCount(1);
 
         context.start();
 
         mockEnd.assertIsSatisfied();
 
+    }
+
+    @Test
+    @Order(8)
+    public void test8EndRouteResponse() throws Exception{
+
+        AdviceWith.adviceWith(context, "http2endResponse", routeBuilder ->{
+            routeBuilder.weaveAddLast().to(mockEnd);
+
+        });
+
+        mockEnd.allMessages().body().convertTo(String.class).contains("name: \"Camel\"\n" +"city: \"London\"");
+        mockEnd.expectedMinimumMessageCount(1);
+
+        context.start();
+
+        mockEnd.assertIsSatisfied();
 
     }
 
