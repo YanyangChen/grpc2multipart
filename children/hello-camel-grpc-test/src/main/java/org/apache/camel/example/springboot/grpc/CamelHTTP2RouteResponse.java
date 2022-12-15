@@ -82,6 +82,15 @@ public class CamelHTTP2RouteResponse extends RouteBuilder {
                 .to("direct:endback");
 
             from("direct:endback")
+                    .process(new Processor() {
+                        @Override
+                        //set the body with the object, using the interface with thr object and its type name
+                        public void process(Exchange exchange) throws Exception {
+                            exchange.getOut().setBody(request, CamelHelloRequest.class);
+                            exchange.getOut().setHeaders(exchange.getIn().getHeaders());
+                        }
+                    })
+                    .convertBodyTo(String.class)
                     .to("seda:netty-http:http://0.0.0.0:28123/fooback");
             // middle marshaling gateways for response
             from("seda:netty-http:http://0.0.0.0:28123/fooback")

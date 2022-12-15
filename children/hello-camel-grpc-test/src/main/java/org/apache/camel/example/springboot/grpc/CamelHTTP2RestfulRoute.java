@@ -21,7 +21,7 @@ public class CamelHTTP2RestfulRoute extends RouteBuilder {
                 .log("Message body in rest: ${body}")
                 .log("Message headers in rest: ${headers}")
 
-                .convertBodyTo(String.class)
+                //.convertBodyTo(String.class)
 
                 .to("log:org.apache.camel.example?level=INFO")
                 .wireTap("seda:netty-http:http://0.0.0.0:9501/middle");
