@@ -1,14 +1,9 @@
 package org.apache.camel.example.springboot.grpc;
 
-import io.netty.buffer.ByteBuf;
 import org.apache.camel.*;
 import org.apache.camel.builder.AdviceWith;
 import org.apache.camel.component.mock.MockEndpoint;
-import org.apache.camel.converter.stream.InputStreamCache;
 import org.apache.camel.examples.CamelHelloRequest;
-import org.apache.camel.examples.MimeContentRequest;
-import org.apache.camel.impl.DefaultCamelContext;
-import org.apache.camel.model.dataformat.MimeMultipartDataFormat;
 import org.apache.camel.test.spring.junit5.CamelSpringBootTest;
 import org.apache.camel.test.spring.junit5.UseAdviceWith;
 import org.junit.Assert;
@@ -19,17 +14,13 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
 import java.util.List;
-import java.util.stream.Stream;
 
 @SpringBootTest
 @CamelSpringBootTest
 @UseAdviceWith
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class SimpleHttp2Test {
+public class SITHttp2Test {
 
     @Autowired
     CamelContext context;

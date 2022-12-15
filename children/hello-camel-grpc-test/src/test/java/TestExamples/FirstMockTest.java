@@ -1,4 +1,4 @@
-package UnitTests;
+package TestExamples;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
