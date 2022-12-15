@@ -94,7 +94,7 @@ public class CamelHTTP2RouteResponse extends RouteBuilder {
                     .unmarshal()
                     .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
             // middle marshaling gateways for response ends here
-                .to("mock:end");
+                .to("mock:endRes");
 
     }
 

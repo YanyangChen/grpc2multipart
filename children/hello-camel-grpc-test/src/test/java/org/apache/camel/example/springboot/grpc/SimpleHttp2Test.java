@@ -43,6 +43,9 @@ public class SimpleHttp2Test {
     @EndpointInject("mock:end")
     protected MockEndpoint mockEnd;
 
+    @EndpointInject("mock:endRes")
+    protected MockEndpoint mockEndRes;
+
     @EndpointInject("mock:ends")
     protected MockEndpoint mockEnds;
 
@@ -121,13 +124,17 @@ public class SimpleHttp2Test {
 
         });
 
-        mockEnd.allMessages().body().convertTo(String.class).contains("name: \"Camel\"\n" +"city: \"London\"");
+        //mockEnd.allMessages().body().convertTo(String.class).contains("name: \"Camel\"\n" +"city: \"London\"");
         mockEnd.expectedMinimumMessageCount(1);
 
         context.start();
 
         mockEnd.assertIsSatisfied();
-
+        List<Exchange> list = mockEnd.getReceivedExchanges();
+        String body = list.get(0).getIn().getBody(String.class);
+        System.out.println("body : \n" + body);
+        Assert.assertTrue(body.contains("Camel"));
+        Assert.assertTrue(body.contains("London"));
     }
 
     @Test
@@ -135,16 +142,21 @@ public class SimpleHttp2Test {
     public void test8EndRouteResponse() throws Exception{
 
         AdviceWith.adviceWith(context, "http2endResponse", routeBuilder ->{
-            routeBuilder.weaveAddLast().to(mockEnd);
+            routeBuilder.weaveAddLast().to(mockEndRes);
 
         });
 
-        mockEnd.allMessages().body().convertTo(String.class).contains("name: \"Camel\"\n" +"city: \"London\"");
-        mockEnd.expectedMinimumMessageCount(1);
+        //mockEndRes.allMessages().body().convertTo(String.class).contains("name: \"Camel\"\n" +"city: \"London\"");
+        mockEndRes.expectedMinimumMessageCount(1);
 
         context.start();
 
-        mockEnd.assertIsSatisfied();
+        mockEndRes.assertIsSatisfied();
+        List<Exchange> list = mockEndRes.getReceivedExchanges();
+        String body = list.get(0).getIn().getBody(String.class);
+        System.out.println("body : \n" + body);
+        Assert.assertTrue(body.contains("Camel"));
+        Assert.assertTrue(body.contains("London"));
 
     }
 

@@ -78,23 +78,6 @@ public class CamelHTTP2Route extends RouteBuilder {
                 // .convertBodyTo(String.class)
 
                 .log("Message headers in ending grpc: ${headers}")
-                .to("direct:end")
-/*
-
-            from("direct:end")
-                    .to("seda:netty-http:http://0.0.0.0:8123/fooback");
-            // middle marshaling gateways for response
-            from("seda:netty-http:http://0.0.0.0:8123/fooback")
-                    .marshal()
-                    .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-                    .to("seda:netty-http:http://0.0.0.0:9500/middleback");
-                //assume a load balancer(HTTP1.1) is here
-            from("seda:netty-http:http://0.0.0.0:9500/middleback")
-
-                    .unmarshal()
-                    .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
-*/
-
                 .to("mock:end");
 
     }

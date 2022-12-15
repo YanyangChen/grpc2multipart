@@ -1,0 +1,2 @@
+UnitTests/MockHttp2Route.class
+org/apache/camel/example/springboot/grpc/SimpleHttp2Test.class
