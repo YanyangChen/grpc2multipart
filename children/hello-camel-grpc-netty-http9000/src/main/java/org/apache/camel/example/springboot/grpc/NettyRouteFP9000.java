@@ -21,9 +21,9 @@ public class NettyRouteFP9000  extends RouteBuilder {
                 //send to another netty server
                 //.to("netty-http:http://0.0.0.0:8123/foo") //send to assumed netty server port 8123
                 //.log("Message body back in multipart: ${body}")
-                .to("netty-http:http://0.0.0.0:8123/foo?chunkedMaxContentLength=20971520");
-                //.log("Message body in multipart: ${body}")
-                //.log("Message body in multipart header: ${headers}");
+                .to("netty-http:http://0.0.0.0:8123/foo?chunkedMaxContentLength=20971520")
+                .log("Message body in multipart: ${body}")
+                .log("Message body in multipart header: ${headers}");
                 //.to("activemq:my-activemq-queue");
     }
 }

@@ -25,9 +25,11 @@ public class NettyRoute  extends RouteBuilder {
                 .mimeMultipart("mixed", true, true, "(included|x-.*)", true)
                 //.aggregate(new GroupedExchangeAggregationStrategy()).constant(true)
                 //.mimeMultipart()
-                .to("file:files/output");
-                //.log("Message body unmarshal multipart: ${body}")
-               // .log("Message Head unmarshal multipart: ${headers}");
+                .log("Message body unmarshal grpc: ${body}")
+                .log("Message Head unmarshal grpc: ${headers}");
+                //.to("file:files/output");
+                /*.log("Message body unmarshal multipart: ${body}")
+                .log("Message Head unmarshal multipart: ${headers}");*/
                 //.completionTimeout(500L)
 
 

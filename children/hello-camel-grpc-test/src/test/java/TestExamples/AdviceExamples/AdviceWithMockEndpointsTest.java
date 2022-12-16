@@ -33,6 +33,9 @@ public class AdviceWithMockEndpointsTest extends CamelTestSupport {
 
 
         });
+
+
+        
         context.start();
 
         camelPoint.expectedBodiesReceived("Camel rocks");

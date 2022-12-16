@@ -6,6 +6,7 @@ org/apache/camel/examples/CamelHelloReply$Builder.class
 org/apache/camel/examples/MimeContentRequest$Builder.class
 org/apache/camel/examples/MimeContentRequest.class
 org/apache/camel/examples/CamelHelloRequest.class
+org/apache/camel/example/springboot/grpc/CamelFileRoute.class
 org/apache/camel/examples/MimeContentGrpc$3.class
 org/apache/camel/examples/MimeContentReply$Builder.class
 org/apache/camel/examples/CamelHelloRequest$Builder.class
@@ -45,4 +46,5 @@ org/apache/camel/examples/CamelHelloRequest$1.class
 org/apache/camel/examples/MimeContentRequest$1.class
 org/apache/camel/examples/MimeContentGrpc$MimeContentStub.class
 org/apache/camel/example/springboot/grpc/Application.class
+org/apache/camel/example/springboot/grpc/CamelGrpcRoute$1.class
 org/apache/camel/examples/MimeContentProto.class

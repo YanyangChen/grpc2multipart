@@ -45,19 +45,19 @@ public class CamelGrpcRoute extends RouteBuilder {
         //from uri="netty-http:http://0.0.0.0:{{port}}/foo?bootstrapConfiguration=#nettyHttpBootstrapOptions"
 
 	//setup endpoint and its behavior
-        //from("timer://foo?period=5000&repeatCount=1")
-        from("file:files/input?flatten=true&noop=true")
-//        .process(new Processor() {
-//            @Override
-//	    //set the body with the object, using the interface with thr object and its type name
-//            public void process(Exchange exchange) throws Exception {
-//                //exchange.getIn().setBody(request, CamelHelloRequest.class);
-//                  exchange.getIn().setBody(mrequest, CamelHelloRequest.class);
-//                //exchange.getIn().setBody("This is just a test to ensure garbage in garbage out");
-//            }
-//
-//        })
-//                .convertBodyTo(String.class)
+        from("timer://foo?period=5000&repeatCount=1")
+        //from("file:files/input?flatten=true&noop=true")
+        .process(new Processor() {
+            @Override
+	    //set the body with the object, using the interface with thr object and its type name
+            public void process(Exchange exchange) throws Exception {
+                //exchange.getIn().setBody(request, CamelHelloRequest.class);
+                  exchange.getIn().setBody(mrequest, CamelHelloRequest.class);
+                //exchange.getIn().setBody("This is just a test to ensure garbage in garbage out");
+            }
+
+        })
+                .convertBodyTo(String.class)
                 .to("netty-http:http://0.0.0.0:9000/foo?chunkedMaxContentLength=20971520");
 
     }

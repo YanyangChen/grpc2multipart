@@ -1,2 +1,12 @@
 UnitTests/MockHttp2Route.class
-org/apache/camel/example/springboot/grpc/SimpleHttp2Test.class
+TestExamples/AdviceExamples/AdviceWithMockEndpointsTest$1.class
+TestExamples/AdviceExamples/AdviceWithMockEndpointsTest.class
+org/apache/camel/example/springboot/grpc/SITHttp2Test.class
+TestExamples/FirstMockTest.class
+UnitTests/MockHttp2ResponseRoute.class
+TestExamples/FirstMockTest$2.class
+TestExamples/CamelBookExample$1.class
+TestExamples/CamelBookExample.class
+TestExamples/FirstMockTest$1.class
+TestExamples/FirstMockTest$3.class
+UnitTests/MockHttp2Restful.class
